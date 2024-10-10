@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap');
+
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        .icon-circles {
+            background-color: #FDBD03;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px;
+        }
+
+        .whatsapp {
+            margin-left: 30px;
+            margin-top: 30px;
+        }
+
+        .icon-circles>img {
+            width: 25px;
+            height: 25px;
+        }
+
+        .line {
+            background-color: #FDBD03;
+            width: 16rem;
+            height: 16px;
+            position: fixed;
+            top: 0px;
+            right: 0px;
+
+        }
+
+        .container {
+            width: 100vw;
+            display: flex;
+        }
+
+        .text {
+            direction: rtl;
+            width: 60%;
+        }
+
+        .text>h1 {
+            color: #FDBD03;
+            font-family: "heebo";
+            font-weight: 900;
+        }
+
+        .text>p {
+            color: #020253;
+            font-family: "heebo";
+        }
+
+        form {
+            display: flex;
+            width: 28em;
+            flex-wrap: wrap;
+            gap: 15px;
+
+        }
+
+        .input1 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            color: #2C2C2C;
+            font-family: "heebo";
+            font-weight: bold;
+        }
+
+        .box {
+            width: 15em;
+            height: 25px;
+            background-color: #E5EEFF;
+            border: none;
+            border-bottom: 2px solid #FDBD03;
+        }
+
+        .input2 {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        #textarea {
+            width: 92%;
+            height: 65px;
+            background-color: #E5EEFF;
+            border: none;
+            border-bottom: 2px solid #FDBD03;
+
+        }
+
+        #send {
+            background-color: #FDBD03;
+            color: #000000;
+            width: 7em;
+            height: 25px;
+            font-family: "heebo";
+            font-weight: bold;
+            border: none;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .side-img {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .side-img>img {
+            width: 15em;
+        }
+
+
+        .icons {
+            display: flex;
+            padding-left: 25px;
+            position: fixed;
+            bottom: 17px;
+            left: 0px;
+        }
+
+        .line-bottom {
+            background-color: #FDBD03;
+            width: 45rem;
+            height: 16px;
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="icon-circles whatsapp">
+        <img src="../icons/Icon simple-whatsapp.png" alt="whatsapp">
+        <div class="line"></div>
+    </div>
+
+    <div class="container">
+
+        <div class="text">
+            <h1>ייעוץ חינם</h1>
+            <p>לקבלת ייעוץ חינם, מוזמנים להשאיר פרטים
+                <br> ומומחה יחזור אליכם עם מענה.
+            </p>
+
+            <form action="">
+                <div class="input1">
+                    <label for="name" class="label">שם מלא</label>
+                    <input type="text" name="name" class="box">
+                </div>
+
+                <div class="input1">
+                    <label for="email" class="label">דוא"ל</label>
+                    <input type="email" name="email" class="box">
+                </div>
+
+                <div class="input2">
+                    <label for="textarea" class="label">שם מלא</label>
+                    <textarea name="textarea" id="textarea"></textarea>
+                </div>
+
+                <input type="submit" value="שליחה" id="send">
+
+            </form>
+
+        </div>
+
+
+        <div class="side-img">
+            <img src="./Image 1.png" alt="image">
+        </div>
+
+
+    </div>
+
+    <div class="icons">
+        <div class="icon-circles">
+            <img src="../icons/Icon awesome-facebook-f.png" alt="facebook">
+        </div>
+
+        <div class="icon-circles">
+            <img src="../icons/icon instagram.png" alt="instagram">
+        </div>
+
+        <div class="icon-circles">
+            <img src="../icons/Icon awesome-linkedin-in.png" alt="linked-in">
+        </div>
+
+        <div class="icon-circles">
+            <img src="../icons/Icon simple-phone.png" alt="phone">
+        </div>
+
+    </div>
+
+    <div class="line-bottom"></div>
+
+</body>
+
+</html>

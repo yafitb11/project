@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>here&now</title>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(#281EFF, #2DFF8C);
+            display: flex;
+            justify-content: center;
+            padding-bottom: 5rem;
+
+
+        }
+
+        .text {
+            align-self: flex-end;
+        }
+
+        .text>h1 {
+            color: #FFFFFF;
+            font-family: satisfy;
+            font-weight: lighter;
+            text-shadow: 0px 0px 36px #00000087;
+            font-size: 7rem;
+            margin: auto;
+            text-align: center;
+            margin: 7px;
+
+        }
+
+        .text>h2 {
+            direction: rtl;
+            color: #FFFFFF;
+            font-family: "Varela Round";
+            text-align: center;
+            margin: 7px;
+        }
+
+        .text>p {
+            color: #F9F9F9;
+            font-family: "Varela Round";
+            text-align: center;
+            margin-top: 12px;
+            margin-bottom: 7px;
+            font-size: 12px;
+        }
+
+        form {
+            margin: auto;
+            direction: rtl;
+            text-align: center;
+            margin: 10px;
+            margin-top: 20px;
+        }
+
+        .input1 {
+            text-align: right;
+            margin: auto;
+            display: inline-block;
+        }
+
+        .input1>label {
+            display: block;
+            color: #F9F9F9;
+            font-family: "Varela Round";
+            font-size: 12px;
+            margin: 0px;
+        }
+
+        .box {
+            border: 2px solid #FFFFFF;
+            background-color: transparent;
+            width: 17rem;
+            height: 33px;
+            margin-left: 15px;
+        }
+
+        #send {
+            background-color: #FFFFFF;
+            color: #1C1C1C;
+            font-family: "Varela Round";
+            font-weight: bold;
+            text-align: center;
+            padding: 9px 38px;
+            font-size: 12px;
+            border: none;
+
+        }
+
+        @media (max-width:760px) {
+
+            .text {
+                margin-top: 3em;
+                align-self: flex-start;
+                padding: 2em;
+            }
+
+            .text>h1 {
+                font-size: 4em;
+
+            }
+
+            .text>h2 {
+                font-weight: 500;
+                font-size: 17px;
+                margin-top: 30px;
+                margin-bottom: 20px;
+            }
+
+            .text>p {
+                font-size: 16px;
+                margin-top: 30px;
+                margin-bottom: 40px;
+
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 30px;
+            }
+
+            .input1 {
+                width: 80%;
+            }
+
+            .box {
+                width: 100%;
+            }
+
+            #send {
+                width: 80%;
+                align-self: center;
+                color: #2823FD;
+            }
+
+
+
+
+
+
+
+
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="text">
+            <h1>Here & Now</h1>
+            <h2>רצינו להזמין אתכם להנות משלל מתנות</h2>
+            <P>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית לפרומי בלוף קינץ תתיח לרעח. לת צשחמי צש בליא, מנסוטו
+                צמלח לביקו ננבי, צמוקו בלוקריה.</P>
+
+            <form action="">
+                <div class="input1">
+                    <label for="name" class="label">שם</label>
+                    <input type="text" name="name" class="box">
+                </div>
+
+                <div class="input1">
+                    <label for="email" class="label">דוא"ל</label>
+                    <input type="email" name="email" class="box">
+                </div>
+
+                <input type="submit" value="עדכנו אותי" id="send">
+
+            </form>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

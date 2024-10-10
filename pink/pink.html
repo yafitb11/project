@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pink</title>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap');
+
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        .pink {
+            width: 100vw;
+            height: 55vh;
+            background-image: url(./Path\ 15.png);
+            background-size: cover;
+            background-position: center center;
+        }
+
+        form {
+            background-color: #1A1A1AD4;
+            position: relative;
+            top: 5em;
+            left: 44em;
+            width: 30vw;
+            height: 66vh;
+            padding: 40px 50px;
+            display: flex;
+            flex-direction: column;
+            direction: rtl;
+            text-align: right;
+
+        }
+
+        form>h1 {
+            color: #FFFFFF;
+            font-family: "heebo";
+            font-weight: 900;
+            margin: 0px;
+            margin-bottom: 15px !important;
+            font-size: 24px;
+        }
+
+        form>p {
+            color: #F9F9F9;
+            font-family: "heebo";
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+
+        .label {
+            color: #FFFFFF;
+            font-family: "heebo";
+            font-weight: bold;
+            text-align: right;
+            font-size: 11px;
+        }
+
+        .box {
+            background-color: #FFFFFF;
+            border: 1px solid #D31C75;
+            margin: 0px;
+            margin-bottom: 10px;
+            height: 29px;
+        }
+
+        #send {
+            background-color: #D31C75;
+            color: #FFFFFF;
+            font-family: "heebo";
+            font-weight: bold;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            margin-top: 18px;
+        }
+
+        @media (max-width:760px) {
+
+
+            form {
+                left: 0em;
+                margin: auto;
+                width: 80vw;
+            }
+
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="pink">
+
+
+        <form action="">
+            <h1>תן לנו להוביל אותך קדימה</h1>
+            <p>לורם איפסום, או בקיצור ליפסום, הוא מלל מקובל וחסר משמעות המשמש "ממלא מקום" בעת עריכ</p>
+
+
+            <label for="name" class="label">שם מלא</label>
+            <input type="text" name="name" class="box">
+            <label for="email" class="label">דוא"ל</label>
+            <input type="email" name="email" class="box">
+            <input type="submit" value="שליחה" id="send">
+
+        </form>
+
+    </div>
+
+
+
+</body>
+
+</html>
