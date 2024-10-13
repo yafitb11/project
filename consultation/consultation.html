@@ -135,20 +135,21 @@
         }
 
 
-
+        .bottom {
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            width: 60%;
+        }
 
         .icons {
-            position: absolute;
-            bottom: 17px;
-            left: 15px;
+            margin-left: 15px;
             display: flex;
         }
 
         .line-bottom {
-            position: absolute;
-            bottom: 0px;
             background-color: #FDBD03;
-            width: 60%;
+            width: 100%;
             height: 15px;
 
         }
@@ -222,14 +223,19 @@
                 width: 100%;
             }
 
-            .icons {
-                left: 36px;
-                margin: auto !important;
-            }
-
-            .line-bottom {
+            .bottom {
+                position: static;
+                margin-top: 25px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 width: 100%;
             }
+
+            .icons {
+                margin: auto !important
+            }
+
 
         }
     </style>
@@ -271,28 +277,6 @@
 
             </form>
 
-            <div class="icons">
-                <div class="icon-circles">
-                    <img src="../icons/Icon awesome-facebook-f.png" alt="facebook">
-                </div>
-
-                <div class="icon-circles">
-                    <img src="../icons/icon instagram.png" alt="instagram">
-                </div>
-
-                <div class="icon-circles">
-                    <img src="../icons/Icon awesome-linkedin-in.png" alt="linked-in">
-                </div>
-
-                <div class="icon-circles">
-                    <img src="../icons/Icon simple-phone.png" alt="phone">
-                </div>
-
-            </div>
-
-            <div class="line-bottom"></div>
-
-
         </div>
 
 
@@ -301,6 +285,9 @@
         </div>
 
 
+    </div>
+
+    <div class="bottom">
 
         <div class="icons">
             <div class="icon-circles">
@@ -324,11 +311,7 @@
         <div class="line-bottom"></div>
 
 
-
-
-
     </div>
-
 
 
 </body>
