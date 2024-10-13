@@ -14,6 +14,14 @@
             box-sizing: border-box;
         }
 
+
+        .line {
+            background-color: #FDBD03;
+            width: 22%;
+            height: 15px;
+            margin-left: 78%;
+        }
+
         .icon-circles {
             background-color: #FDBD03;
             width: 50px;
@@ -27,7 +35,7 @@
 
         .whatsapp {
             margin-left: 30px;
-            margin-top: 30px;
+            margin-top: 15px;
         }
 
         .icon-circles>img {
@@ -35,15 +43,6 @@
             height: 25px;
         }
 
-        .line {
-            background-color: #FDBD03;
-            width: 16rem;
-            height: 16px;
-            position: fixed;
-            top: 0px;
-            right: 0px;
-
-        }
 
         .container {
             width: 100vw;
@@ -53,6 +52,8 @@
         .text {
             direction: rtl;
             width: 60%;
+
+
         }
 
         .text>h1 {
@@ -120,11 +121,13 @@
             margin-top: 30px;
         }
 
+
         .side-img {
             width: 45%;
             display: flex;
             justify-content: center;
             align-items: center;
+
         }
 
         .side-img>img {
@@ -132,30 +135,112 @@
         }
 
 
+
+
         .icons {
-            display: flex;
-            padding-left: 25px;
-            position: fixed;
+            position: absolute;
             bottom: 17px;
-            left: 0px;
+            left: 15px;
+            display: flex;
         }
 
         .line-bottom {
-            background-color: #FDBD03;
-            width: 45rem;
-            height: 16px;
-            position: fixed;
+            position: absolute;
             bottom: 0px;
-            left: 0px;
+            background-color: #FDBD03;
+            width: 60%;
+            height: 15px;
+
+        }
+
+
+        @media(max-width:768px) {
+
+            .line {
+                margin-left: 20%;
+                width: 80%;
+            }
+
+            .container {
+                flex-direction: column-reverse;
+                align-items: center;
+
+
+            }
+
+            .side-img {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .side-img>img {
+                width: 6em;
+            }
+
+            .text {
+                width: 100%;
+                padding: 0px;
+
+            }
+
+            .text>h1 {
+                text-align: center;
+                margin: auto;
+                font-size: 24px;
+            }
+
+            .text>p {
+                text-align: center;
+                margin: auto;
+                font-size: 16px;
+
+            }
+
+            .text>form {
+                margin: auto;
+                width: 80%;
+                flex-direction: column;
+            }
+
+            .input1 {
+                width: 100%;
+            }
+
+            .box {
+                width: 100%;
+            }
+
+            .input2 {
+                width: 100%;
+            }
+
+            #textarea {
+                width: 100%;
+            }
+
+            #send {
+                width: 100%;
+            }
+
+            .icons {
+                left: 36px;
+                margin: auto !important;
+            }
+
+            .line-bottom {
+                width: 100%;
+            }
+
         }
     </style>
 
 </head>
 
 <body>
+    <div class="line"></div>
+
     <div class="icon-circles whatsapp">
         <img src="../icons/Icon simple-whatsapp.png" alt="whatsapp">
-        <div class="line"></div>
     </div>
 
     <div class="container">
@@ -186,6 +271,28 @@
 
             </form>
 
+            <div class="icons">
+                <div class="icon-circles">
+                    <img src="../icons/Icon awesome-facebook-f.png" alt="facebook">
+                </div>
+
+                <div class="icon-circles">
+                    <img src="../icons/icon instagram.png" alt="instagram">
+                </div>
+
+                <div class="icon-circles">
+                    <img src="../icons/Icon awesome-linkedin-in.png" alt="linked-in">
+                </div>
+
+                <div class="icon-circles">
+                    <img src="../icons/Icon simple-phone.png" alt="phone">
+                </div>
+
+            </div>
+
+            <div class="line-bottom"></div>
+
+
         </div>
 
 
@@ -194,28 +301,35 @@
         </div>
 
 
+
+        <div class="icons">
+            <div class="icon-circles">
+                <img src="../icons/Icon awesome-facebook-f.png" alt="facebook">
+            </div>
+
+            <div class="icon-circles">
+                <img src="../icons/icon instagram.png" alt="instagram">
+            </div>
+
+            <div class="icon-circles">
+                <img src="../icons/Icon awesome-linkedin-in.png" alt="linked-in">
+            </div>
+
+            <div class="icon-circles">
+                <img src="../icons/Icon simple-phone.png" alt="phone">
+            </div>
+
+        </div>
+
+        <div class="line-bottom"></div>
+
+
+
+
+
     </div>
 
-    <div class="icons">
-        <div class="icon-circles">
-            <img src="../icons/Icon awesome-facebook-f.png" alt="facebook">
-        </div>
 
-        <div class="icon-circles">
-            <img src="../icons/icon instagram.png" alt="instagram">
-        </div>
-
-        <div class="icon-circles">
-            <img src="../icons/Icon awesome-linkedin-in.png" alt="linked-in">
-        </div>
-
-        <div class="icon-circles">
-            <img src="../icons/Icon simple-phone.png" alt="phone">
-        </div>
-
-    </div>
-
-    <div class="line-bottom"></div>
 
 </body>
 
