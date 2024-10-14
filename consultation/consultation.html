@@ -136,6 +136,7 @@
 
 
         .bottom {
+
             position: fixed;
             bottom: 0px;
             left: 0px;
@@ -225,7 +226,7 @@
 
             .bottom {
                 position: static;
-                margin-top: 25px;
+                margin-top: 50px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -236,6 +237,13 @@
                 margin: auto !important
             }
 
+        }
+
+        @media(min-height:766px) {
+            .bottom {
+                position: fixed;
+                bottom: 0px;
+            }
 
         }
     </style>
