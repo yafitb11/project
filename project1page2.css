@@ -1,0 +1,9 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+#protfolio {
+  background-color: linearGradient rgb(212, 79, 183), rgb(166, 0, 255), hsl(265, 100%, 50%);
+}/*# sourceMappingURL=project1page2.css.map */

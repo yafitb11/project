@@ -1,0 +1,16 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+$my-pink: rgb(212, 79, 183);
+$my-purple: hsl(265, 100%, 50%);
+$my-purple2: rgb(166, 0, 255);
+
+$my-gradient: linearGradient ($my-pink, $my-purple2, $my-purple);
+
+#protfolio {
+    background-color: $my-gradient;
+}
