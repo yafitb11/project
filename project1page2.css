@@ -21,7 +21,7 @@
   color: white !important;
 }
 
-.portfolio {
+#portfolio {
   background: linear-gradient(rgb(212, 79, 183), rgb(166, 0, 255), hsl(265, 100%, 50%));
 }
 
@@ -32,21 +32,21 @@
   width: 40px;
 }
 
-.about-me {
+#about-me {
   background: linear-gradient(white, rgba(213, 213, 213, 0.95), gray);
 }
-.about-me a button {
+#about-me a button {
   background-color: rgb(40, 29, 160);
   color: white !important;
 }
 
-.cards {
+#cards {
   background: linear-gradient(white, rgba(213, 213, 213, 0.95), gray);
 }
-.cards .card {
+#cards .card {
   padding-top: 10px;
 }
-.cards .card img {
+#cards .card img {
   width: 100%;
   margin-bottom: 15px;
   box-shadow: 5px 5px 15px;

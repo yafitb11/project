@@ -28,7 +28,7 @@ $my-purple2: rgb(166, 0, 255);
     color: white !important;
 }
 
-.portfolio {
+#portfolio {
     background: linear-gradient($my-pink, $my-purple2, $my-purple);
 
 }
@@ -42,7 +42,7 @@ $my-purple2: rgb(166, 0, 255);
     }
 }
 
-.about-me {
+#about-me {
     background: linear-gradient(white, rgba(213, 213, 213, 0.95), gray);
 
     a {
@@ -53,7 +53,7 @@ $my-purple2: rgb(166, 0, 255);
     }
 }
 
-.cards {
+#cards {
     background: linear-gradient(white, rgba(213, 213, 213, 0.95), gray);
 
     .card {
