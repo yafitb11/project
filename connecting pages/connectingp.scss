@@ -11,21 +11,26 @@ $my-purple2: rgb(166, 0, 255);
 $my-brown: rgb(220, 198, 132);
 
 
-#nav {
+.start {
     background-color: $my-blue;
-    height: 35px;
-}
+    height: 40px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-right: 15px;
+    gap: 5px;
 
-#logo {
-    width: 30px;
-}
 
-#logoName {
-    width: 70px;
-}
+    #logo {
+        width: 33px;
+        border-radius: 50%;
 
-.nav-link {
-    color: white !important;
+    }
+
+    #logoName {
+        width: 70px;
+    }
+
 }
 
 #project-name {

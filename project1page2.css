@@ -4,6 +4,153 @@
   box-sizing: border-box;
 }
 
-#protfolio {
-  background-color: linearGradient rgb(212, 79, 183), rgb(166, 0, 255), hsl(265, 100%, 50%);
+#nav {
+  background-color: rgb(40, 29, 160);
+  height: 40px;
+}
+
+#logo {
+  width: 30px;
+}
+
+#logoName {
+  width: 70px;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.portfolio {
+  background: linear-gradient(rgb(212, 79, 183), rgb(166, 0, 255), hsl(265, 100%, 50%));
+}
+
+.icons1 {
+  height: 50px;
+}
+.icons1 img {
+  width: 40px;
+}
+
+.about-me {
+  background: linear-gradient(white, rgba(213, 213, 213, 0.95), gray);
+}
+.about-me a button {
+  background-color: rgb(40, 29, 160);
+  color: white !important;
+}
+
+.cards {
+  background: linear-gradient(white, rgba(213, 213, 213, 0.95), gray);
+}
+.cards .card {
+  padding-top: 10px;
+}
+.cards .card img {
+  width: 100%;
+  margin-bottom: 15px;
+  box-shadow: 5px 5px 15px;
+}
+
+#contact {
+  padding-right: 50px;
+}
+
+#form {
+  flex-wrap: wrap;
+}
+#form label {
+  color: white;
+}
+#form #my-form-group {
+  width: 632px !important;
+}
+#form #my-form-group #message {
+  height: 55px !important;
+  margin-bottom: 12px;
+}
+#form button {
+  background-color: rgb(40, 29, 160);
+  color: white !important;
+  width: 53%;
+  margin-bottom: 20px;
+}
+
+#my-icons {
+  background: linear-gradient(rgb(212, 79, 183), rgb(166, 0, 255), hsl(265, 100%, 50%));
+}
+
+#end {
+  background-color: rgb(40, 29, 160);
+}
+#end p {
+  color: white;
+}
+
+@media (max-width: 996px) {
+  #nav {
+    padding: 0px;
+  }
+  #nav .navbar-toggler-icon {
+    background-color: white !important;
+  }
+}
+@media (max-width: 780px) {
+  .my-icons {
+    gap: 20px !important;
+  }
+  #contact {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px !important;
+  }
+  #contact #contact-img {
+    height: 4rem;
+  }
+  #contact #contact-text {
+    align-self: center;
+    width: 90% !important;
+    margin: 7px 0px 0px 0px !important;
+  }
+  #contact #contact-text p {
+    margin: 0px 0px 5px 0px !important;
+  }
+  #form {
+    flex-direction: column;
+    padding: 0px !important;
+    gap: 0px !important;
+  }
+  #form label {
+    font-size: 11px;
+  }
+  #form .form-group {
+    width: 70% !important;
+    margin: auto !important;
+    align-self: center !important;
+  }
+  #form #my-form-group {
+    width: 70% !important;
+  }
+  #form #my-form-group #message {
+    width: 100%;
+    height: 55px !important;
+    margin-bottom: 12px;
+  }
+  #form #my-form-group button {
+    font-size: 13px !important;
+    width: 80% !important;
+    height: 1.5rem;
+    margin-bottom: 10px;
+  }
+  #my-icons {
+    flex-wrap: wrap;
+    gap: 11px !important;
+  }
+  #my-icons img {
+    width: 25px;
+    height: 30px;
+    margin: 0px;
+  }
 }/*# sourceMappingURL=project1page2.css.map */

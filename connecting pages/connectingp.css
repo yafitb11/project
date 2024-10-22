@@ -4,21 +4,21 @@
   box-sizing: border-box;
 }
 
-#nav {
+.start {
   background-color: rgb(40, 29, 160);
-  height: 35px;
+  height: 40px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding-right: 15px;
+  gap: 5px;
 }
-
-#logo {
-  width: 30px;
+.start #logo {
+  width: 33px;
+  border-radius: 50%;
 }
-
-#logoName {
+.start #logoName {
   width: 70px;
-}
-
-.nav-link {
-  color: white !important;
 }
 
 #project-name {
