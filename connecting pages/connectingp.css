@@ -13,12 +13,12 @@
   padding-right: 15px;
   gap: 5px;
 }
+.start #logoName {
+  width: 70px;
+}
 .start #logo {
   width: 33px;
   border-radius: 50%;
-}
-.start #logoName {
-  width: 70px;
 }
 
 #project-name {
@@ -58,42 +58,14 @@
 }
 
 @media (max-width: 768px) {
-  /*
-      #main-container {
-          width: 90% !important;
-          margin-top: 30px !important;
-          margin-bottom: 30px !important;
-      }
-  */
-  #nav {
-    height: 40px;
-    padding: 0px 10px 0px 0px !important;
+  .start {
+    padding-right: 8px;
   }
-  #nav #nav-container {
-    padding: 0px !important;
-    margin: 0px !important;
-  }
-  .my-logo {
-    margin: 0px !important;
-  }
-  .my-logo #logo {
+  .start #logo {
     width: 25px;
   }
-  .my-logo #logoName {
+  .start #logoName {
     width: 55px;
-  }
-  .my-hamburger {
-    border-radius: 15px;
-    width: 25px !important;
-    height: 25px !important;
-  }
-  .nav-link {
-    color: white !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    background-color: rgb(40, 29, 160) !important;
-    width: 60px !important;
-    text-align: center !important;
   }
   #project-name {
     padding: 20px !important;
