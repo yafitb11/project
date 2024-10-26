@@ -128,6 +128,16 @@ $my-purple2: rgb(166, 0, 255);
     #nav {
         padding: 0px;
 
+        .navbar-brand {
+            margin: 0px !important;
+
+            #logoName {
+                margin-right: 0px;
+            }
+
+        }
+
+
         .nav-link {
             background-color: $my-blue !important;
             width: 52px !important;

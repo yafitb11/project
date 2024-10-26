@@ -96,6 +96,12 @@
   #nav {
     padding: 0px;
   }
+  #nav .navbar-brand {
+    margin: 0px !important;
+  }
+  #nav .navbar-brand #logoName {
+    margin-right: 0px;
+  }
   #nav .nav-link {
     background-color: rgb(40, 29, 160) !important;
     width: 52px !important;
