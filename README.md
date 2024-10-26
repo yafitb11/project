@@ -1,10 +1,10 @@
-# First Portfolio
+# Portfolio project
 
-Welcome to **Portfolio**! This project showcases my work in HTML and CSS during my studies. It features a main portfolio page that provides access to various mini-projects.
+Welcome to **Portfolio project**! This project showcases my work in HTML and CSS during my studies. It features a main portfolio page that provides access to various mini-projects.
 
 ## Description
 
-The **Portfolio** is a personal showcase that includes a main page with a self-description, a downloadable CV, and a contact form. From the main page, you can navigate to six different mini-projects, through dedicated connecting pages. Each mini-project features a unique landing page. 
+The **Portfolio project** is a personal showcase that includes a main page with a self-description, a downloadable CV, and a contact form. From the main page, you can navigate to six different mini-projects, through dedicated connecting pages. Each mini-project features a unique landing page. 
 
 ## Features
 
