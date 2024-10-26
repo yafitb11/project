@@ -27,6 +27,7 @@ $my-purple2: rgb(166, 0, 255);
 
 .nav-link {
     color: white !important;
+
 }
 
 #portfolio {
@@ -126,6 +127,16 @@ $my-purple2: rgb(166, 0, 255);
 
     #nav {
         padding: 0px;
+
+        .nav-link {
+            background-color: $my-blue !important;
+            width: 50px !important;
+            text-align: center !important;
+            border-radius: 15px !important;
+            padding: 0px !important;
+            margin: 2px !important;
+            font-size: 11px !important;
+        }
 
         .navbar-toggler-icon {
             background-color: white !important;
