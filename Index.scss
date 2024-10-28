@@ -65,6 +65,8 @@ $my-purple2: rgb(166, 0, 255);
 
     .card {
         padding-top: 10px;
+        background-color: rgb(197, 197, 197);
+
 
         img {
             width: 100%;
@@ -72,11 +74,15 @@ $my-purple2: rgb(166, 0, 255);
             box-shadow: 5px 5px 15px;
         }
 
-        .my-btn {
-            background-color: $my-blue;
-            color: white;
-        }
+        .btn-holder {
+            background: linear-gradient($my-pink, $my-purple2, $my-purple);
+            border-radius: 10px;
 
+            .my-btn {
+                background-color: $my-blue;
+                color: white;
+            }
+        }
     }
 }
 
