@@ -56,6 +56,10 @@
   margin-bottom: 15px;
   box-shadow: 5px 5px 15px;
 }
+#cards .card .my-btn {
+  background-color: rgb(40, 29, 160);
+  color: white;
+}
 
 #contact {
   padding-right: 50px;
