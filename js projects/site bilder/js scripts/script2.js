@@ -11,8 +11,8 @@ const changePageColor = () => {
     color.value = "";
 }
 document.getElementById('submitPage').addEventListener('click', changePageColor);
-//select.....
 
+//select.....
 const chooseE = document.getElementById("element");
 chooseE.addEventListener('change', (e) => {
 
@@ -146,5 +146,8 @@ document.getElementById('removeDivBtn').addEventListener('click', removeDiv);
 const hideDivForm = () => {
     const divP = document.getElementById("divProperties");
     divP.style.display = "none";
+    const side2 = document.getElementById("side2");
+    side2.style.height = "500px";
+    chooseE.value = "";
 }
 document.getElementById('hideDivFormBtn').addEventListener('click', hideDivForm);

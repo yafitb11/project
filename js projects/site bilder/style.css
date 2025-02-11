@@ -130,3 +130,9 @@ form>fieldset>input[type="submit"] {
     height: 500px;
     background-color: gray;
 }
+
+.buttonsDiv {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 5px;
+}
