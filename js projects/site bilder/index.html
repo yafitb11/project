@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./site.js" defer></script>
-    <link rel="stylesheet" href="./site.css">
+    <script src="./js scripts/script2.js" defer type="module"></script>
+    <link rel="stylesheet" href="./style.css">
 
 </head>
 
@@ -24,7 +24,7 @@
                 <label for="page">page background color</label>
                 <div id="pageInputHolder">
                     <input type="text" name="page" id="bgc">
-                    <input type="submit" onclick="changePageColor()">
+                    <input type="submit" id="submitPage">
                 </div>
 
             </div>
@@ -60,7 +60,7 @@
                         <input type="submit" class="submitb" id="cDiv" value="create div">
                     </fieldset>
 
-                    <button type="button" onclick="addDivBorder()">add border</button>
+                    <button type="button" id="addDivBorderBtn">add border</button>
 
                     <fieldset id="border">
                         <legend>border properties</legend>
@@ -78,7 +78,7 @@
 
                     </fieldset>
 
-                    <button type="button" onclick="addDivContent()">add content</button>
+                    <button type="button" id="addDivContentBtn">add content</button>
 
                     <fieldset id="content">
                         <legend>content properties</legend>
@@ -91,18 +91,13 @@
                         <input type="submit" class="submitb" id="cContent" value="create content">
                     </fieldset>
 
-                    <button type="button" onclick="removeDiv()">remove div</button>
-                    <button type="button" onclick="hideDivForm()">hide div form</button>
+                    <button type="button" id="removeDivBtn">remove div</button>
+                    <button type="button" id="hideDivFormBtn">hide div form</button>
 
                 </form>
 
 
             </div>
-
-
-
-
-
 
         </div>
 
