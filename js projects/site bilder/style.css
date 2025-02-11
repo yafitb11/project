@@ -136,3 +136,13 @@ form>fieldset>input[type="submit"] {
     flex-direction: column-reverse;
     gap: 5px;
 }
+
+
+#removeElementsButtonsDiv {
+    align-items: flex-end;
+}
+
+#removeElementsButtonsDiv>button {
+    background-color: blueviolet;
+    padding: 5px;
+}

@@ -1,18 +1,18 @@
 
-let removeBtnCounth1 = 0;
+
 let h1ID = 10;
 let h1IdList = [];
 
 const selectedH1 = () => {
     cerateH1Form();
-    createRemoveH1()
+    createRemoveH1();
 }
 
 const side = document.getElementById("side");
 
 //create H1 form...
 const cerateH1Form = () => {
-    removeBtnCounth1 = 0;
+    //    removeBtnCounth1 = 0;
     const form = document.createElement("form");
     side.appendChild(form);
     const fieldset = document.createElement("fieldset");
@@ -53,13 +53,9 @@ const cerateH1Form = () => {
     inputsub.id = "createH1";
     fieldset.appendChild(inputsub);
 
-
-    const buttonsDiv = document.createElement("div");
-    buttonsDiv.className = "buttonsDiv";
-    form.appendChild(buttonsDiv);
     const removeFormBtn = document.createElement("button");
     removeFormBtn.innerText = "remove h1 form";
-    buttonsDiv.appendChild(removeFormBtn);
+    form.appendChild(removeFormBtn);
     removeFormBtn.addEventListener('click', (e) => {
         e.preventDefault();
         side.removeChild(form);
@@ -96,12 +92,12 @@ const createRemoveH1 = () => {
         form.elements[2].value = "";
         form.elements[3].value = "";
 
-        if (removeBtnCounth1 === 0) {
-            const buttonsDiv = document.querySelector(".buttonsDiv");
+        if (h1ID === 11) {
+            const removeElementsButtonsDiv = document.getElementById("removeElementsButtonsDiv");
             const removeBtn = document.createElement("button");
             removeBtn.innerText = "remove h1";
-            buttonsDiv.appendChild(removeBtn);
-            removeBtnCounth1++;
+            removeElementsButtonsDiv.appendChild(removeBtn);
+            // removeBtnCounth1++;
 
             removeBtn.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -110,10 +106,23 @@ const createRemoveH1 = () => {
                 h1IdList = h1IdList.filter((id) => { return id != h1ID });
                 localStorage.setItem('h1-Id-list', JSON.stringify(h1IdList));
                 h1ID--;
+                if (h1ID == 10) {
+                    removeElementsButtonsDiv.removeChild(removeBtn);
+                    //  removeBtnCounth1 = 0;
+                }
             })
         }
 
     })
 }
 
+
+
 export { selectedH1 };
+
+
+/*
+const buttonsDiv = document.createElement("div");
+    buttonsDiv.className = "buttonsDiv";
+    form.appendChild(buttonsDiv);
+    */
