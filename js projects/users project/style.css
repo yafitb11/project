@@ -1,0 +1,58 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.register-form,
+.login-form {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+}
+
+.table-aditform-container {
+    display: flex;
+}
+
+.container-users {
+    width: 70%;
+}
+
+#users-table {
+    width: 90%;
+
+    thead {
+        background-color: #f1f1f1;
+    }
+}
+
+#editFormDiv {
+    width: 20%;
+    display: flex;
+    justify-content: start;
+
+    #editDiv {
+        display: none;
+
+        #editForm {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    #editPasswordDiv {
+        display: none;
+
+        #editPasswordForm {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+}

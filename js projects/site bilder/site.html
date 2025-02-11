@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./site.js" defer></script>
+    <link rel="stylesheet" href="./site.css">
+
+</head>
+
+<body>
+
+    <div id="pageContainer">
+
+        <div id="creationPlatform"></div>
+
+        <div id="side">
+
+            <h1>create your elements</h1>
+
+            <div id="page">
+                <label for="page">page background color</label>
+                <div id="pageInputHolder">
+                    <input type="text" name="page" id="bgc">
+                    <input type="submit" onclick="changePageColor()">
+                </div>
+
+            </div>
+
+            <div id="create">
+
+                <label for="element">choose element type</label>
+                <select name="element" id="element">
+                    <option value="" selected disabled>choose</option>
+                    <option value="div">div</option>
+                    <option value="h1">h1</option>
+                    <option value="p">p</option>
+                    <option value="a">a</option>
+                    <option value="button">button</option>
+                </select>
+            </div>
+
+
+            <div id="divProperties">
+                <form action="" id="divForm">
+
+                    <fieldset>
+                        <legend>div basic properties</legend>
+
+                        <label for="background-color">background color</label>
+                        <input type="text" id="divBGC"><br>
+                        <label for="width">width in px</label>
+                        <input type="number" min="1" id="divW"><br>
+                        <label for="height">height in px</label>
+                        <input type="number" min="1" id="divH"><br>
+                        <label for="border-radius">border-radius in px</label>
+                        <input type="number" min="0" id="divBR"><br>
+                        <input type="submit" class="submitb" id="cDiv" value="create div">
+                    </fieldset>
+
+                    <button type="button" onclick="addDivBorder()">add border</button>
+
+                    <fieldset id="border">
+                        <legend>border properties</legend>
+                        <label for="color">border color</label>
+                        <input type="text" id="bcolor"><br>
+                        <label for="width">border width in px</label>
+                        <input type="number" min="1" id="bwidth"><br>
+                        <label for="style">border style</label>
+                        <select name="" id="bstyle">
+                            <option value="solid">solid</option>
+                            <option value="dashed">dashed</option>
+                            <option value="dotted">dotted</option>
+                        </select>
+                        <input type="submit" class="submitb" id="cBorder" value="add border">
+
+                    </fieldset>
+
+                    <button type="button" onclick="addDivContent()">add content</button>
+
+                    <fieldset id="content">
+                        <legend>content properties</legend>
+                        <label for="">content</label>
+                        <textarea name="" id="dcontent" placeholder="write content"></textarea><br>
+                        <label for="">content font color</label>
+                        <input type="text" id="ccolor"><br>
+                        <label for="">content size in px</label>
+                        <input type="number" min="1" id="csize"><br>
+                        <input type="submit" class="submitb" id="cContent" value="create content">
+                    </fieldset>
+
+                    <button type="button" onclick="removeDiv()">remove div</button>
+                    <button type="button" onclick="hideDivForm()">hide div form</button>
+
+                </form>
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+    <div id="extra">
+        <div id="side2"></div>
+    </div>
+
+</body>
+
+</html>

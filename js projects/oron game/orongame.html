@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./orongame.js" defer></script>
+    <link rel="stylesheet" href="./oron.css">
+
+</head>
+
+<body>
+    <div id="container">
+        <h1>Welcome to Oron's Game</h1>
+        <br>
+        <div>
+            <input type="text" id="name" placeholder="write your name"><button onclick="addName()">add your
+                name</button>
+        </div>
+        <br>
+        <h2>choose your level</h2>
+
+        <select name="" id="level" onchange="selection()">
+            <option value="" selected disabled>choose your level</option>
+            <option value="easy">Easy: 1-10</option>
+            <option value="medium">Medium: 1-100</option>
+            <option value="hard">Heard: 1-1000</option>
+        </select>
+
+        <br><br>
+
+        <div id="cardtable">
+
+
+            <div id="card">
+                <h2 id="h2"></h2>
+                <br>
+                <div id="lableholder">
+                    <label for="answer" id="lable"></label>
+                </div>
+                <br>
+                <div id="inputholder">
+                    <input type="number" name="answer" id="answer" placeholder="write your answer"><button id="button"
+                        onclick="cheack()">submit</button>
+                </div>
+            </div>
+
+
+
+            <div id="table">
+                <div id="theader">
+                    <h3></h3>
+                </div>
+                <div id="titles">
+                    <p>question</p>
+                    <p>right answer</p>
+                    <p>answer</p>
+                    <p>points</p>
+                </div>
+                <div class="ex">
+                    <p id="q1"></p>
+                    <p id="ra1"></p>
+                    <p id="a1"></p>
+                    <p id="p1"></p>
+                </div>
+                <div class="ex">
+                    <p id="q2"></p>
+                    <p id="ra2"></p>
+                    <p id="a2"></p>
+                    <p id="p2"></p>
+                </div>
+                <div class="ex">
+                    <p id="q3"></p>
+                    <p id="ra3"></p>
+                    <p id="a3"></p>
+                    <p id="p3"></p>
+                </div>
+                <div class="ex">
+                    <p id="q4"></p>
+                    <p id="ra4"></p>
+                    <p id="a4"></p>
+                    <p id="p4"></p>
+                </div>
+                <div class="ex">
+                    <p id="q5"></p>
+                    <p id="ra5"></p>
+                    <p id="a5"></p>
+                    <p id="p5"></p>
+                </div>
+                <div class="ex">
+                    <p id="q6"></p>
+                    <p id="ra6"></p>
+                    <p id="a6"></p>
+                    <p id="p6"></p>
+                </div>
+                <div class="ex">
+                    <p id="q7"></p>
+                    <p id="ra7"></p>
+                    <p id="a7"></p>
+                    <p id="p7"></p>
+                </div>
+                <div class="ex">
+                    <p id="q8"></p>
+                    <p id="ra8"></p>
+                    <p id="a8"></p>
+                    <p id="p8"></p>
+                </div>
+                <div class="ex">
+                    <p id="q9"></p>
+                    <p id="ra9"></p>
+                    <p id="a9"></p>
+                    <p id="p9"></p>
+                </div>
+                <div class="ex">
+                    <p id="q10"></p>
+                    <p id="ra10"></p>
+                    <p id="a10"></p>
+                    <p id="p10"></p>
+                </div>
+                <div id="tfooter">
+                    <p id="tscore">total score</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!--
+    <label for="answer" id="label">1.</label>
+    <input type="text" name="answer" id="answer"><button onclick="getanswer()" id="whatswritten">3+5?</button>
+-->
+
+
+
+
+</body>
+
+</html>

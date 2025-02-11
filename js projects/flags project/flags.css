@@ -1,0 +1,14 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+.img {
+    height: 35%;
+}
+
+.fa:hover {
+    cursor: pointer;
+}
