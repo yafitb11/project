@@ -9,9 +9,11 @@ const selectedButton = () => {
     createRemoveButton()
 }
 
+const side = document.getElementById("side");
+
 //create button form...
 const cerateButtonForm = () => {
-    const side = document.getElementById("side");
+
     const form = document.createElement("form");
     side.appendChild(form);
     const fieldset = document.createElement("fieldset");
@@ -95,6 +97,18 @@ const cerateButtonForm = () => {
     inputsub.type = "submit";
     inputsub.id = "createB";
     fieldset.appendChild(inputsub);
+
+    const removeFormBtn = document.createElement("button");
+    removeFormBtn.innerText = "remove button form";
+    form.appendChild(removeFormBtn);
+    removeFormBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        side.removeChild(form);
+        const side2 = document.getElementById("side2");
+        side2.style.height = "500px";
+        const chooseE = document.getElementById("element");
+        chooseE.value = "";
+    })
 }
 
 
@@ -117,6 +131,8 @@ const createRemoveButton = () => {
         button.id = buttonID;
         const platform = document.getElementById("creationPlatform");
         platform.appendChild(button);
+        buttonIdList.push(button.id);
+        localStorage.setItem('button-Id-list', JSON.stringify(buttonIdList));
         form.elements[1].value = "";
         form.elements[2].value = "";
         form.elements[3].value = "";
@@ -125,27 +141,25 @@ const createRemoveButton = () => {
         form.elements[6].value = "";
         form.elements[7].value = "";
 
-        if (removeBtnCountbtn === 0) {
+        if (buttonID === 41) {
+            const removeElementsButtonsDiv = document.getElementById("removeElementsButtonsDiv");
             const removeBtn = document.createElement("button");
             removeBtn.innerText = "remove button";
-            form.appendChild(removeBtn);
-            removeBtnCountbtn++;
+            removeBtn.style.backgroundColor = "lightblue";
+            removeElementsButtonsDiv.appendChild(removeBtn);
 
             removeBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 const removedBTN = document.getElementById(buttonID);
                 platform.removeChild(removedBTN);
+                buttonIdList = buttonIdList.filter((id) => { return id != buttonID });
+                localStorage.setItem('button-Id-list', JSON.stringify(buttonIdList));
                 buttonID--;
+                if (buttonID == 40) {
+                    removeElementsButtonsDiv.removeChild(removeBtn);
+                }
             })
-        } else { }
-
-        const removeFormBtn = document.createElement("button");
-        removeFormBtn.innerText = "remove button form";
-        form.appendChild(removeFormBtn);
-        removeFormBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            side.removeChild(form);
-        })
+        }
 
 
     })

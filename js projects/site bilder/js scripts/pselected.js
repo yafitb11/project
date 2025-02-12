@@ -1,6 +1,5 @@
 
-let removeBtnCountp = 0;
-let removeFormBtnCountp = 0;
+
 let pID = 20;
 let pIdList = [];
 
@@ -11,9 +10,11 @@ const selectedP = () => {
     createRemoveP()
 }
 
+const side = document.getElementById("side");
+
 //create p form...
 const ceratePForm = () => {
-    const side = document.getElementById("side");
+
     const form = document.createElement("form");
     side.appendChild(form);
     const fieldset = document.createElement("fieldset");
@@ -54,6 +55,21 @@ const ceratePForm = () => {
     inputsub.id = "createP";
     fieldset.appendChild(inputsub);
 
+
+    const removeFormBtn = document.createElement("button");
+    removeFormBtn.innerText = "remove p form";
+    form.appendChild(removeFormBtn);
+    removeFormBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        side.removeChild(form);
+        const side2 = document.getElementById("side2");
+        side2.style.height = "500px";
+        const chooseE = document.getElementById("element");
+        chooseE.value = "";
+    })
+
+
+
 }
 
 
@@ -73,32 +89,33 @@ const createRemoveP = () => {
         p.id = pID;
         const platform = document.getElementById("creationPlatform");
         platform.appendChild(p);
+        pIdList.push(p.id);
+        localStorage.setItem('p-Id-list', JSON.stringify(pIdList));
+
         form.elements[1].value = "";
         form.elements[2].value = "";
         form.elements[3].value = "";
 
 
-        if (removeBtnCountp === 0) {
+        if (pID === 21) {
+            const removeElementsButtonsDiv = document.getElementById("removeElementsButtonsDiv");
             const removeBtn = document.createElement("button");
             removeBtn.innerText = "remove p";
-            form.appendChild(removeBtn);
-            removeBtnCountp++;
+            removeBtn.style.backgroundColor = "yellow";
+            removeElementsButtonsDiv.appendChild(removeBtn);
 
             removeBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 const removedP = document.getElementById(pID);
                 platform.removeChild(removedP);
+                pIdList = pIdList.filter((id) => { return id != pID });
+                localStorage.setItem('p-Id-list', JSON.stringify(pIdList));
                 pID--;
+                if (pID == 20) {
+                    removeElementsButtonsDiv.removeChild(removeBtn);
+                }
             })
-        } else { }
-
-        const removeFormBtn = document.createElement("button");
-        removeFormBtn.innerText = "remove p form";
-        form.appendChild(removeFormBtn);
-        removeFormBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            side.removeChild(form);
-        })
+        }
 
     })
 }

@@ -139,10 +139,12 @@ form>fieldset>input[type="submit"] {
 
 
 #removeElementsButtonsDiv {
-    margin-top: 15px;
+    margin-top: 20px;
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 10px;
 }
 
 #removeElementsButtonsDiv>button {
