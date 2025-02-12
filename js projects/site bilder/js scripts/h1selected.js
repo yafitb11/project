@@ -12,7 +12,7 @@ const side = document.getElementById("side");
 
 //create H1 form...
 const cerateH1Form = () => {
-    //    removeBtnCounth1 = 0;
+
     const form = document.createElement("form");
     side.appendChild(form);
     const fieldset = document.createElement("fieldset");
@@ -96,8 +96,8 @@ const createRemoveH1 = () => {
             const removeElementsButtonsDiv = document.getElementById("removeElementsButtonsDiv");
             const removeBtn = document.createElement("button");
             removeBtn.innerText = "remove h1";
+            removeBtn.style.backgroundColor = "blueviolet";
             removeElementsButtonsDiv.appendChild(removeBtn);
-            // removeBtnCounth1++;
 
             removeBtn.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -108,7 +108,6 @@ const createRemoveH1 = () => {
                 h1ID--;
                 if (h1ID == 10) {
                     removeElementsButtonsDiv.removeChild(removeBtn);
-                    //  removeBtnCounth1 = 0;
                 }
             })
         }
