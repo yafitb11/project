@@ -151,17 +151,29 @@ cContent.addEventListener('click', (e) => {
 //remove div...........
 
 const removeDiv = () => {
-    const platform = document.getElementById("creationPlatform");
-    const div1 = document.getElementById(divIdNum);
-    platform.removeChild(div1);
-    divIdList = divIdList.filter((id) => { return id != divID });
-    localStorage.setItem('div-Id-list', JSON.stringify(divIdList));
-    divIdNum--;
-    if (divID == 0) {
-        removeElementsButtonsDiv.removeChild(removeBtn);
+    if (divID === 1) {
+        const removeElementsButtonsDiv = document.getElementById("removeElementsButtonsDiv");
+        const removeBtn = document.createElement("button");
+        removeBtn.innerText = "remove div";
+        removeBtn.style.backgroundColor = "red";
+        removeElementsButtonsDiv.appendChild(removeBtn);
+
+        removeBtn.addEventListener('click', (e) => {
+            const platform = document.getElementById("creationPlatform");
+            const removedDiv = document.getElementById(divIdNum);
+            platform.removeChild(removedDiv);
+            divIdList = divIdList.filter((id) => { return id != divID });
+            localStorage.setItem('div-Id-list', JSON.stringify(divIdList));
+            divIdNum--;
+            if (divID == 0) {
+                removeElementsButtonsDiv.removeChild(removeBtn);
+            }
+        })
     }
+
+
 }
-document.getElementById('removeDivBtn').addEventListener('click', removeDiv);
+
 
 //hide div form
 
