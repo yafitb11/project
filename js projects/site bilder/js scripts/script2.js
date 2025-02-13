@@ -12,6 +12,24 @@ const changePageColor = () => {
 }
 document.getElementById('submitPage').addEventListener('click', changePageColor);
 
+const pageDiv = document.getElementById("page");
+const pageBackDiv = document.getElementById("pageBack");
+const hidePageForm = () => {
+    pageDiv.style.display = "none";
+    const pageBackBtn = document.createElement("button");
+    pageBackBtn.innerText = "show page color form";
+    pageBackBtn.id = "returnPage";
+    pageBackBtn.addEventListener('click', (e) => {
+        pageDiv.style.display = "flex";
+        pageBackDiv.removeChild(pageBackBtn);
+    })
+
+    pageBackDiv.appendChild(pageBackBtn);
+}
+document.getElementById("hidePage").addEventListener('click', hidePageForm);
+
+
+
 //select.....
 const chooseE = document.getElementById("element");
 chooseE.addEventListener('change', (e) => {
@@ -39,7 +57,6 @@ chooseE.addEventListener('change', (e) => {
     side2.style.height = "300px";
 
 })
-
 
 
 
@@ -137,7 +154,12 @@ const removeDiv = () => {
     const platform = document.getElementById("creationPlatform");
     const div1 = document.getElementById(divIdNum);
     platform.removeChild(div1);
+    divIdList = divIdList.filter((id) => { return id != divID });
+    localStorage.setItem('div-Id-list', JSON.stringify(divIdList));
     divIdNum--;
+    if (divID == 0) {
+        removeElementsButtonsDiv.removeChild(removeBtn);
+    }
 }
 document.getElementById('removeDivBtn').addEventListener('click', removeDiv);
 

@@ -1,11 +1,11 @@
 
 
-let h1ID = 10;
-let h1IdList = [];
+let divID = 0;
+let divIdList = [];
 
-const selectedH1 = () => {
-    cerateH1Form();
-    createRemoveH1();
+const selecteddiv = () => {
+    cerateDivForm();
+    createRemoveDiv();
 }
 
 const side = document.getElementById("side");
@@ -116,5 +116,11 @@ const createRemoveH1 = () => {
 
 
 
-export { selectedH1 };
+export { selectedDiv };
 
+
+/*
+const buttonsDiv = document.createElement("div");
+    buttonsDiv.className = "buttonsDiv";
+    form.appendChild(buttonsDiv);
+    */

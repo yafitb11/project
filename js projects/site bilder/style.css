@@ -75,15 +75,6 @@ form>fieldset {
     padding: 7px;
 }
 
-/*
-#divForm>fieldset>div {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 5px;
-}
-*/
-
 form>fieldset>label {
     margin-right: 10px;
 }
@@ -117,8 +108,6 @@ form>fieldset>input[type="submit"] {
 
 }
 
-
-/* additional side*/
 #extra {
     width: 100%;
     display: flex;
@@ -151,3 +140,47 @@ form>fieldset>input[type="submit"] {
     padding: 5px;
     border-radius: 12px;
 }
+
+@media(max-width: 768px) {
+
+
+    #pageContainer {
+        flex-direction: column-reverse;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+
+    #side2 {
+        display: none;
+    }
+
+    #side {
+        width: 100%;
+        padding: 10px;
+        overflow-y: auto;
+    }
+
+    #creationPlatform {
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    form>fieldset {
+        width: auto;
+    }
+
+    #divProperties {
+        width: auto;
+    }
+}
+
+
+
+/*
+#divForm>fieldset>div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5px;
+}
+*/
