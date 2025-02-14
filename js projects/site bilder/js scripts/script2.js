@@ -85,11 +85,15 @@ cDivBtn.addEventListener('click', (e) => {
     const platform = document.getElementById("creationPlatform");
     platform.appendChild(newDiv);
 
+    divIdList.push(newDiv.id);
+    localStorage.setItem('div-Id-list', JSON.stringify(divIdList));
+
     document.getElementById("divBGC").value = "";
     document.getElementById("divW").value = "";
     document.getElementById("divH").value = "";
     document.getElementById("divBR").value = "";
 
+    removeDiv();
 })
 
 //div border...........
@@ -114,7 +118,6 @@ cBorder.addEventListener('click', (e) => {
     document.getElementById("bcolor").value = "";
     document.getElementById("bwidth").value = "";
     document.getElementById("bstyle").value = "";
-
 })
 
 //div content.........
@@ -148,33 +151,6 @@ cContent.addEventListener('click', (e) => {
 
 })
 
-//remove div...........
-
-const removeDiv = () => {
-    if (divID === 1) {
-        const removeElementsButtonsDiv = document.getElementById("removeElementsButtonsDiv");
-        const removeBtn = document.createElement("button");
-        removeBtn.innerText = "remove div";
-        removeBtn.style.backgroundColor = "red";
-        removeElementsButtonsDiv.appendChild(removeBtn);
-
-        removeBtn.addEventListener('click', (e) => {
-            const platform = document.getElementById("creationPlatform");
-            const removedDiv = document.getElementById(divIdNum);
-            platform.removeChild(removedDiv);
-            divIdList = divIdList.filter((id) => { return id != divID });
-            localStorage.setItem('div-Id-list', JSON.stringify(divIdList));
-            divIdNum--;
-            if (divID == 0) {
-                removeElementsButtonsDiv.removeChild(removeBtn);
-            }
-        })
-    }
-
-
-}
-
-
 //hide div form
 
 const hideDivForm = () => {
@@ -185,3 +161,30 @@ const hideDivForm = () => {
     chooseE.value = "";
 }
 document.getElementById('hideDivFormBtn').addEventListener('click', hideDivForm);
+
+
+//remove div...........
+
+const removeDiv = () => {
+    if (divIdNum === 1) {
+        const removeElementsButtonsDiv = document.getElementById("removeElementsButtonsDiv");
+        const removeBtn = document.createElement("button");
+        removeBtn.innerText = "remove div";
+        removeBtn.style.backgroundColor = "red";
+        removeElementsButtonsDiv.appendChild(removeBtn);
+
+        removeBtn.addEventListener('click', (e) => {
+            const platform = document.getElementById("creationPlatform");
+            const removedDiv = document.getElementById(divIdNum);
+            platform.removeChild(removedDiv);
+            divIdList = divIdList.filter((id) => { return id != divIdNum });
+            localStorage.setItem('div-Id-list', JSON.stringify(divIdList));
+            divIdNum--;
+            if (divIdNum == 0) {
+                removeElementsButtonsDiv.removeChild(removeBtn);
+            }
+        })
+    }
+}
+
+
