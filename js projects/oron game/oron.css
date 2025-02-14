@@ -94,3 +94,12 @@
     align-items: center;
     justify-content: space-around;
 }
+
+@media(max-width:768px) {
+
+    #cardtable {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
