@@ -123,8 +123,7 @@ form>fieldset>input[type="submit"] {
 
 
 #removeElementsButtonsDiv {
-    margin-top: 20px;
-    padding: 20px;
+    margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
