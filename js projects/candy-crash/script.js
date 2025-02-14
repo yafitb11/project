@@ -51,6 +51,7 @@ const startGame = () => {
 
 
 function dragStart() {
+    firstMove++;
     currentTile = this;
 }
 
@@ -116,7 +117,6 @@ function crushCandy() {
     crushThree();
     if (firstMove === 0) {
         score = 0;
-        firstMove++;
     }
     document.getElementById("score").innerText = score;
 }
