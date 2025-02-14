@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Users Mangement</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="./index.js" type="module" defer></script>
+    <script src="./script.js" type="module" defer></script>
 </head>
 
 <body dir="rtl">
@@ -29,7 +29,7 @@
                 <label for="register-password">סיסמא</label>
                 <input type="password" name="password" id="register-password" />
             </div>
-            <input type="submit">הרשם</>
+            <input type="submit" value="הרשם">
         </form>
     </div>
 
@@ -72,9 +72,9 @@
         <div id="editFormDiv">
 
             <div id="editDiv">
+                <h1>עריכת פרטים</h1>
+
                 <form action="" id="editForm">
-                    <h1>עריכת פרטים</h1>
-                    <br><br>
                     <label for="firstNameEdit">שם פרטי</label>
                     <input type="text" name="firstName" id="firstNameEdit" />
                     <label for="lastNameEdit">שם משפחה</label>
@@ -87,9 +87,8 @@
             </div>
 
             <div id="editPasswordDiv">
+                <h1>שינוי סיסמא</h1>
                 <form action="" id="editPasswordForm">
-                    <h1>שינוי סיסמא</h1>
-                    <br>
                     <label for="oldPassword">סיסמא ישנה</label>
                     <input type="password" name="oldPassword" id="oldPassword" />
                     <label for="newPassword">סיסמא חדשה</label>

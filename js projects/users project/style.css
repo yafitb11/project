@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    padding: 15px;
+}
+
 .register-form,
 .login-form {
     display: flex;
@@ -21,14 +25,18 @@
 }
 
 .container-users {
-    width: 70%;
+    width: 60%;
 }
 
 #users-table {
-    width: 90%;
+    width: 95%;
 
     thead {
         background-color: #f1f1f1;
+    }
+
+    button {
+        margin: 3px;
     }
 }
 
@@ -37,8 +45,13 @@
     display: flex;
     justify-content: start;
 
+    h1 {
+        margin-bottom: 15px;
+    }
+
     #editDiv {
         display: none;
+        margin-left: 20px;
 
         #editForm {
             display: flex;
@@ -54,5 +67,65 @@
             flex-direction: column;
         }
     }
+
+}
+
+/*.....................................*/
+@media(max-width:768px) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px !important;
+    }
+
+    .container-login {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 21px;
+        margin-bottom: 10px;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .table-aditform-container {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #editFormDiv {
+        width: 100%;
+    }
+
+    #editFormDiv form {
+        display: flex;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center;
+    }
+
+    .container-users {
+        width: 100%;
+        padding: 7px;
+        margin-top: 20px;
+        font-size: 13px;
+
+        button {
+            font-size: 12px;
+            padding: 1px;
+        }
+    }
+
+
 
 }

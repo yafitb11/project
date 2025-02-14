@@ -26,7 +26,6 @@ const drawTableRows = (users) => {
             User.removeUser(user.id);
         });
 
-        // you should complete this part
         const editButton = document.createElement('button');
         editButton.textContent = 'עריכה';
         editButton.addEventListener('click', () => {
