@@ -63,6 +63,11 @@ const drawTableRows = (users) => {
                 e.preventDefault();
                 const oldPassword = e.target.elements.oldPassword.value;
                 const newPassword = e.target.newPassword.value;
+                const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+                if (!passwordRegex.test(newPassword)) {
+                    alert('על הסיסמא להכיל לפחות 8 תוים, וביניהם לפחות אות אנגלית קטנה אחת, אות אנגלית גדולה אחת וספרה אחת.');
+                    return;
+                }
                 User.changePassword(user.id, oldPassword, newPassword);
 
                 e.target.reset();
@@ -88,13 +93,19 @@ registerForm.addEventListener('submit', (e) => {
     const lastName = e.target.elements.lastName.value;
     const email = e.target.elements.email.value;
     const password = e.target.elements.password.value;
-
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
     const users = User.usersList;
 
     if (users.find((user) => user.email === email)) {
         alert('משתמש עם כתובת דוא"ל זו כבר קיים');
         return;
     }
+
+    if (!passwordRegex.test(password)) {
+        alert('על הסיסמא להכיל לפחות 8 תוים, וביניהם לפחות אות אנגלית קטנה אחת, אות אנגלית גדולה אחת וספרה אחת.');
+        return;
+    }
+
     new User(firstName, lastName, email, password);
     e.target.reset();
 });

@@ -60,7 +60,7 @@ export class User {
             user.password = newPassword;
             localStorage.setItem('users', JSON.stringify(User.usersList));
             drawTableRows(User.usersList);
-        } else { alert("identification faild") }
+        } else { alert("identification faild"); }
     }
 
 }
