@@ -60,7 +60,7 @@ const cerateH1Form = () => {
         e.preventDefault();
         side.removeChild(form);
         const side2 = document.getElementById("side2");
-        side2.style.height = "500px";
+        side2.style.height = "400px";
         const chooseE = document.getElementById("element");
         chooseE.value = "";
     })
