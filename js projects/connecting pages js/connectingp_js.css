@@ -1,0 +1,94 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.start {
+  background-color: rgb(40, 29, 160);
+  height: 40px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding-right: 15px;
+  gap: 5px;
+}
+.start #logoName {
+  width: 70px;
+}
+.start #logo {
+  width: 33px;
+  border-radius: 50%;
+}
+
+#project-name {
+  background: linear-gradient(rgb(212, 79, 183), rgb(166, 0, 255), hsl(265, 100%, 50%));
+}
+#project-name #links a {
+  display: inline-block;
+}
+#project-name #links a button {
+  color: white;
+  background-color: rgb(40, 29, 160);
+  border-radius: 15px;
+  padding: 3px 9px;
+}
+
+#icons1 {
+  height: 50px;
+}
+#icons1 img {
+  width: 40px;
+}
+
+#poject-holder {
+  background-color: rgba(188, 194, 194, 0.8901960784);
+}
+#poject-holder img {
+  width: 70%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+#end {
+  background-color: rgb(40, 29, 160);
+}
+#end p {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .start {
+    padding-right: 8px;
+  }
+  .start #logo {
+    width: 25px;
+  }
+  .start #logoName {
+    width: 55px;
+  }
+  #project-name {
+    padding: 20px !important;
+  }
+  #project-name h1 {
+    font-size: 24px !important;
+  }
+  #project-name p {
+    font-size: 14px !important;
+  }
+  #project-name #links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #project-name #links a button {
+    font-size: 14px;
+  }
+  #icons1 {
+    height: 35px;
+  }
+  #icons1 img {
+    width: 25px;
+  }
+}/*# sourceMappingURL=connectingp_js.css.map */
