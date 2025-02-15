@@ -80,6 +80,10 @@ body {
         padding: 0px !important;
     }
 
+    .container-register {
+        margin-top: 20px;
+    }
+
     .container-login {
         margin-top: 20px;
         margin-bottom: 20px;
@@ -105,19 +109,17 @@ body {
 
     #editFormDiv {
         width: 100%;
+        justify-content: center !important;
+        margin-bottom: 20px;
     }
 
     #editFormDiv form {
-        display: flex;
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
         justify-content: center;
     }
 
     .container-users {
         width: 100%;
         padding: 7px;
-        margin-top: 20px;
         font-size: 13px;
 
         button {
