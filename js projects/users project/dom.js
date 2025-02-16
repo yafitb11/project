@@ -39,12 +39,17 @@ const drawTableRows = (users) => {
                 const newlastName = e.target.elements.lastNameEdit.value;
                 const newemail = e.target.elements.emailEdit.value;
 
-                if (users.find((user) => user.email === newemail)) {
+                const id = user.id;
+                const newList = [...User.usersList];
+                const otherUsers = newList.filter((user) => { return user.id !== id; })
+                console.log(otherUsers);
+
+                if (otherUsers.find((user) => user.email === newemail)) {
                     alert('משתמש עם כתובת דוא"ל זו כבר קיים');
                     return;
                 }
 
-                User.edditUser(user.id, newfirstName, newlastName, newemail);
+                User.editUser(user.id, newfirstName, newlastName, newemail);
                 e.target.reset();
                 editDiv.style.display = "none";
             })

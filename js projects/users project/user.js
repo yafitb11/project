@@ -17,7 +17,8 @@ export class User {
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.id = ++User.count;
+        this.id = User.count;
+        User.count++;
 
         User.usersList.push(this);
         localStorage.setItem('users', JSON.stringify(User.usersList));
@@ -44,7 +45,7 @@ export class User {
         drawTableRows(User.usersList);
     }
 
-    static edditUser(id, firstName, lastName, email) {
+    static editUser(id, firstName, lastName, email) {
         const user = User.usersList.find((user) => user.id === id);
         user.firstName = firstName;
         user.lastName = lastName;
