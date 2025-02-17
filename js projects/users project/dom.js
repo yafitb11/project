@@ -1,5 +1,7 @@
 import { User } from './user.js';
 
+
+
 const drawTableRows = (users) => {
     const tableBody = document.querySelector('#users-table-body');
 
@@ -11,7 +13,7 @@ const drawTableRows = (users) => {
         <td>${user.firstName}</td>
         <td>${user.lastName}</td>
         <td>${user.email}</td>
-        <td>${user.password}</td>
+        <td dir="ltr">${user.password}</td>
         <td>${user.isLogedIn ? 'מחובר' : 'מנותק'}</td>
         `;
         const logoutBtn = document.createElement('button');
@@ -30,54 +32,16 @@ const drawTableRows = (users) => {
         editButton.textContent = 'עריכה';
         editButton.addEventListener('click', () => {
             const editDiv = document.getElementById("editDiv");
+            document.getElementById("editFormId").value = user.id;
             editDiv.style.display = "block";
-
-            const editForm = document.getElementById("editForm");
-            editForm.addEventListener("submit", (e) => {
-                e.preventDefault();
-                const newfirstName = e.target.elements.firstNameEdit.value;
-                const newlastName = e.target.elements.lastNameEdit.value;
-                const newemail = e.target.elements.emailEdit.value;
-
-                const id = user.id;
-                const newList = [...User.usersList];
-                const otherUsers = newList.filter((user) => { return user.id !== id; })
-                console.log(otherUsers);
-
-                if (otherUsers.find((user) => user.email === newemail)) {
-                    alert('משתמש עם כתובת דוא"ל זו כבר קיים');
-                    return;
-                }
-
-                User.editUser(user.id, newfirstName, newlastName, newemail);
-                e.target.reset();
-                editDiv.style.display = "none";
-            })
-
         });
-
 
         const editPasswordButton = document.createElement('button');
         editPasswordButton.textContent = 'שינוי סיסמא';
         editPasswordButton.addEventListener('click', () => {
             const editPasswordDiv = document.getElementById("editPasswordDiv");
+            document.getElementById("editPasswordFormId").value = user.id;
             editPasswordDiv.style.display = "block";
-
-            const editPasswordForm = document.getElementById("editPasswordForm");
-            editPasswordForm.addEventListener("submit", (e) => {
-                e.preventDefault();
-                const oldPassword = e.target.elements.oldPassword.value;
-                const newPassword = e.target.newPassword.value;
-                const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
-                if (!passwordRegex.test(newPassword)) {
-                    alert('על הסיסמא להכיל לפחות 8 תוים, וביניהם לפחות אות אנגלית קטנה אחת, אות אנגלית גדולה אחת וספרה אחת.');
-                    return;
-                }
-                User.changePassword(user.id, oldPassword, newPassword);
-
-                e.target.reset();
-                editPasswordDiv.style.display = "none";
-            })
         });
 
         row.appendChild(logoutBtn);
@@ -85,9 +49,48 @@ const drawTableRows = (users) => {
         row.appendChild(editButton);
         row.appendChild(editPasswordButton);
         tableBody.appendChild(row);
+
     });
 };
 
+
+
+const editForm = document.getElementById("editForm");
+editForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const newfirstName = e.target.elements.firstNameEdit.value;
+    const newlastName = e.target.elements.lastNameEdit.value;
+    const newemail = e.target.elements.emailEdit.value;
+    const id = Number.parseInt(document.getElementById("editFormId").value);
+    const otherUsers = User.usersList.filter((user) => { return user.id !== id; })
+
+    if (otherUsers.find((user) => user.email === newemail)) {
+        alert('משתמש עם כתובת דוא"ל זו כבר קיים');
+        return;
+    }
+
+    User.editUser(id, newfirstName, newlastName, newemail);
+    e.target.reset();
+    editDiv.style.display = "none";
+})
+
+
+const editPasswordForm = document.getElementById("editPasswordForm");
+editPasswordForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const id = Number.parseInt(document.getElementById("editPasswordFormId").value);
+    const oldPassword = e.target.elements.oldPassword.value;
+    const newPassword = e.target.newPassword.value;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+    if (!passwordRegex.test(newPassword)) {
+        alert('על הסיסמא להכיל לפחות 8 תוים, וביניהם לפחות אות אנגלית קטנה אחת, אות אנגלית גדולה אחת וספרה אחת.');
+        return;
+    }
+    User.changePassword(id, oldPassword, newPassword);
+
+    e.target.reset();
+    editPasswordDiv.style.display = "none";
+})
 
 
 const registerForm = document.querySelector('.register-form');
