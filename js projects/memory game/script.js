@@ -7,13 +7,24 @@ const finishSound = new Audio('audio/finish.mp3');
 const matchSound = new Audio('audio/match.mp3');
 const openCardSound = new Audio('audio/opencard.mp3');
 const noMatchSound = new Audio('audio/nomatch.mp3');
+const looseSound = new Audio('audio/loose.mp3');
 let startTime;
 let endTime;
+let timer;
 
 const mixCreateEmojies = () => {
     cardsOpenNoMatch = [];
     cardsMatch = [];
+    if (timer) {
+        clearTimeout(timer);
+    }
     startTime = Date.now();
+
+    timer = setTimeout(() => {
+        looseSound.play();
+        setTimeout(() => { alert("you lost!"); window.location.reload(); }, 200);
+    }, 120000);
+
     emojies.sort(() => Math.random() > 0.5 ? 2 : -1);
 
     const board = document.getElementById("board");
@@ -28,6 +39,7 @@ const mixCreateEmojies = () => {
         card.addEventListener("click", (e) => {
             if (cardsOpenNoMatch.length >= 2) { return; }
             if (cardsOpenNoMatch.includes(card)) { return; }
+            if (cardsMatch.includes(card)) { return; }
             else {
                 openCardSound.play();
                 card.classList.add("open");
