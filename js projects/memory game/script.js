@@ -11,6 +11,8 @@ const looseSound = new Audio('audio/loose.mp3');
 let startTime;
 let endTime;
 let timer;
+let bestTime;
+let previousBestTime;
 
 const mixCreateEmojies = () => {
     cardsOpenNoMatch = [];
@@ -71,8 +73,17 @@ const mixCreateEmojies = () => {
                 setTimeout(() => { finishSound.play() }, 200);
                 endTime = Date.now();
                 let timeTaken = (endTime - startTime) / 1000;
-                timeTaken = (timeTaken / 60).toFixed(2);
-                setTimeout(() => { alert(`you won! your time: ${timeTaken} minutes!`); }, 500)
+                let timeTakenMinutes = `${Math.floor(timeTaken / 60)}:${Math.round(timeTaken % 60)}`;
+                setTimeout(() => { alert(`you won! your time: ${timeTakenMinutes} minutes!`); }, 500);
+                previousBestTime = localStorage.getItem('best time') ? JSON.parse(localStorage.getItem('best time')) : 120;
+                bestTime = previousBestTime < timeTaken ? previousBestTime : timeTaken;
+                localStorage.setItem('best time', JSON.stringify(bestTime));
+                let bestTimeMinutes = `${Math.floor(bestTime / 60)}:${Math.round(bestTime % 60)}`;
+                const bestTimeTitle = document.getElementById("bestTimeT");
+                bestTimeTitle.innerText = `best time: ${bestTimeMinutes} minutes`;
+                clearTimeout(timer);
+
+
             }
 
         })
