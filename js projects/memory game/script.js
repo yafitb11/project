@@ -3,8 +3,17 @@ const emojies = ["😊", "😊", "😂", "😂", "🤣", "🤣", "❤️", "❤�
 
 let cardsOpenNoMatch = [];
 let cardsMatch = [];
+const finishSound = new Audio('audio/finish.mp3');
+const matchSound = new Audio('audio/match.mp3');
+const openCardSound = new Audio('audio/opencard.mp3');
+const noMatchSound = new Audio('audio/nomatch.mp3');
+let startTime;
+let endTime;
 
 const mixCreateEmojies = () => {
+    cardsOpenNoMatch = [];
+    cardsMatch = [];
+    startTime = Date.now();
     emojies.sort(() => Math.random() > 0.5 ? 2 : -1);
 
     const board = document.getElementById("board");
@@ -17,14 +26,17 @@ const mixCreateEmojies = () => {
 
 
         card.addEventListener("click", (e) => {
-            if (cardsOpenNoMatch.length >= 2) { return; } else {
-
+            if (cardsOpenNoMatch.length >= 2) { return; }
+            if (cardsOpenNoMatch.includes(card)) { return; }
+            else {
+                openCardSound.play();
                 card.classList.add("open");
                 cardsOpenNoMatch.push(card);
 
                 if (cardsOpenNoMatch.length === 2) {
 
                     if (cardsOpenNoMatch[0].innerText === cardsOpenNoMatch[1].innerText) {
+                        setTimeout(() => { matchSound.play() }, 600);
                         cardsOpenNoMatch[0].classList.add("match");
                         cardsMatch.push(cardsOpenNoMatch[0]);
                         cardsOpenNoMatch[1].classList.add("match");
@@ -33,6 +45,7 @@ const mixCreateEmojies = () => {
 
                     } else {
                         setTimeout(() => {
+                            noMatchSound.play();
                             cardsOpenNoMatch[1].classList.remove("open");
                             cardsOpenNoMatch[0].classList.remove("open");
                             cardsOpenNoMatch = [];
@@ -43,7 +56,11 @@ const mixCreateEmojies = () => {
             }
 
             if (cardsMatch.length === emojies.length) {
-                setTimeout(() => { alert("you won!"); }, 600)
+                setTimeout(() => { finishSound.play() }, 200);
+                endTime = Date.now();
+                let timeTaken = (endTime - startTime) / 1000;
+                timeTaken = (timeTaken / 60).toFixed(2);
+                setTimeout(() => { alert(`you won! your time: ${timeTaken} minutes!`); }, 500)
             }
 
         })
