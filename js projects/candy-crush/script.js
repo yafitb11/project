@@ -134,6 +134,7 @@ const crushThree = () => {
                 candy2.src = "./images/blank.png";
                 candy3.src = "./images/blank.png";
                 score += 30;
+                if (firstMove > 0) { new Audio('audio/crush1.mp3').play() }
                 return true;
             }
         }
@@ -149,6 +150,7 @@ const crushThree = () => {
                 candy2.src = "./images/blank.png";
                 candy3.src = "./images/blank.png";
                 score += 30;
+                if (firstMove > 0) { new Audio('audio/crush1.mp3').play() }
                 return true;
             }
         }
@@ -170,6 +172,7 @@ const crushFour = () => {
                 candy3.src = "./images/blank.png";
                 candy4.src = "./images/blank.png";
                 score += 40;
+                if (firstMove > 0) { new Audio('audio/crush2.mp3').play() }
                 return true;
             }
         }
@@ -187,6 +190,7 @@ const crushFour = () => {
                 candy3.src = "./images/blank.png";
                 candy4.src = "./images/blank.png";
                 score += 40;
+                if (firstMove > 0) { new Audio('audio/crush2.mp3').play() }
                 return true;
             }
         }
@@ -211,6 +215,8 @@ const crushFive = () => {
                 candy4.src = "./images/blank.png";
                 candy5.src = "./images/blank.png";
                 score += 50;
+                if (firstMove > 0) { new Audio('audio/crush.mp3').play() }
+                if (firstMove > 0) { setTimeout(() => { new Audio('audio/delicious.mp3').play() }, 1000) }
                 return true;
             }
         }
@@ -230,6 +236,7 @@ const crushFive = () => {
                 candy4.src = "./images/blank.png";
                 candy5.src = "./images/blank.png";
                 score += 50;
+                if (firstMove > 0) { new Audio('audio/crush3.mp3').play() }
                 return true;
             }
         }
