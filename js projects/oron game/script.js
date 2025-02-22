@@ -669,32 +669,27 @@ const selection = () => {
 //players table..............
 
 const playersTable = document.getElementById("playersTable");
+const playersDiv = document.getElementById('playersDiv');
 const buildPlayersTable = () => {
-    const previousBtnCheack = document.getElementById('resetBtn1');
-    if (previousBtnCheack) { playersTable.removeChild(previousBtnCheack); }
+    playersDiv.innerHTML = "";
 
-    const divscontainer = document.createElement('div');
-    playersTable.appendChild(divscontainer);
     for (let player of players) {
         const div = document.createElement("div");
         div.className = "ex";
         div.innerHTML = ` <p>${player.name}</p>
                     <p>${player.level}</p>
                     <p>${player.points}</p>`;
-        divscontainer.appendChild(div);
+        playersDiv.appendChild(div);
     }
 
-    const resetBtn = document.createElement('button');
-    resetBtn.innerText = "reset players";
-    resetBtn.id = "resetBtn1";
-    resetBtn.addEventListener('click', () => {
-        players = [];
-        playersTable.removeChild(divscontainer);
-        localStorage.setItem('players', JSON.stringify(players));
-    })
-    playersTable.appendChild(resetBtn);
-
     playersTable.style.display = "block";
+    console.log(players);
 
 }
 
+//reset players........
+const resetPlayers = () => {
+    players = [];
+    localStorage.setItem('players', JSON.stringify(players));
+    playersDiv.innerHTML = "";
+}

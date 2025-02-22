@@ -56,9 +56,14 @@
 
 }
 
-.theader {
+.theaderr {
     background-color: gray;
     text-align: center;
+}
+
+.theaderr>h3 {
+    margin: 0px;
+    font-size: 18px;
 }
 
 .titles {
@@ -96,7 +101,17 @@
 }
 
 #playersTable {
+    display: flex;
+    flex-direction: column;
     display: none;
+    width: 200px;
+}
+
+#buttonDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 #playerName {
