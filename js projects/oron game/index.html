@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Oron's Game</title>
     <script src="./script.js" defer></script>
     <link rel="stylesheet" href="./style.css">
 
@@ -14,9 +14,13 @@
     <div id="container">
         <h1>Welcome to Oron's Game</h1>
         <br>
-        <div>
+        <div id="nameDiv">
             <input type="text" id="name" placeholder="write your name"><button onclick="addName()">add your
                 name</button>
+        </div>
+        <div>
+            <p id="nameHelper">please enter your name</p>
+            <h1 id="playerName"></h1>
         </div>
         <br>
         <h2>choose your level</h2>
@@ -49,10 +53,10 @@
 
 
             <div id="table">
-                <div id="theader">
+                <div id="theader" class="theader">
                     <h3></h3>
                 </div>
-                <div id="titles">
+                <div class="titles">
                     <p>question</p>
                     <p>right answer</p>
                     <p>answer</p>
@@ -123,6 +127,20 @@
                 </div>
 
             </div>
+
+
+            <div id="playersTable">
+                <div class="theader">
+                    <h3>Players Table</h3>
+                </div>
+                <div class="titles">
+                    <p>name</p>
+                    <p>level</p>
+                    <p>points</p>
+                </div>
+
+            </div>
+
 
         </div>
 

@@ -1,9 +1,27 @@
 
-const name1 = document.getElementById("name");
+class Player {
+    name;
+    level;
+    points;
+    constructor(name, level, points) {
+        this.name = name;
+        this.level = level;
+        this.points = points;
+    }
+}
 
+let userName;
+let level;
+let players = JSON.parse(localStorage.getItem('players')) || [];
+
+const name1 = document.getElementById("name");
 const addName = () => {
-    console.log(name1.value);
-    localStorage.setItem("name", name1.value);
+    document.getElementById('nameHelper').style.display = "none";
+    userName = name1.value;
+    if (name1.value == "") { document.getElementById('nameHelper').style.display = "block"; name1.style.border = "red solid 2px"; return; }
+    name1.value = "";
+    document.getElementById("playerName").innerText = userName;
+    document.getElementById("nameDiv").style.display = "none";
 }
 
 
@@ -11,6 +29,8 @@ let lable1 = document.getElementById("lable");
 let count = 0;
 let onclicks = 0;
 
+
+//easy................................
 const submitEasy = () => {
     onclicks++;
     const inputE = document.getElementById("answer");
@@ -188,20 +208,20 @@ const submitEasy = () => {
             table.style.display = "block";
             const tscore = document.getElementById("tscore");
             tscore.innerText = `your total score is  ${count} points`;
-            onclicks = 0;
+            let user = new Player(userName, level, count);
+            players.push(user);
+            localStorage.setItem('players', JSON.stringify(players));
+            buildPlayersTable();
             break;
 
         default:
             break;
     }
 
-    console.log(count);
-    localStorage.setItem("scoreE", count);
-
 }
 
 
-
+//medium...........................................
 const submitMedium = () => {
     onclicks++;
     const inputE = document.getElementById("answer");
@@ -374,21 +394,23 @@ const submitMedium = () => {
             alert("you have reached " + count + " points");
             const table = document.getElementById("table");
             table.style.display = "block";
-            onclicks = 0;
+            const tscore = document.getElementById("tscore");
+            tscore.innerText = `your total score is  ${count} points`;
+            let user = new Player(userName, level, count);
+            players.push(user);
+            localStorage.setItem('players', JSON.stringify(players));
+            buildPlayersTable();
             break;
 
         default:
             break;
     }
 
-    console.log(count);
-    localStorage.setItem("scoreM", count);
-
 }
 
 
 
-
+//hard......................................
 const submitHard = () => {
     onclicks++;
     const inputE = document.getElementById("answer");
@@ -564,23 +586,31 @@ const submitHard = () => {
             alert("you have reached " + count + " points");
             const table = document.getElementById("table");
             table.style.display = "block";
-            onclicks = 0;
+            const tscore = document.getElementById("tscore");
+            tscore.innerText = `your total score is  ${count} points`;
+            let user = new Player(userName, level, count);
+            players.push(user);
+            localStorage.setItem('players', JSON.stringify(players));
+            buildPlayersTable();
             break;
 
         default:
             break;
     }
 
-    console.log(count);
-    localStorage.setItem("scoreH", count);
-
 }
 
 
-
+//selection.................................................
 const selection = () => {
-    const value = document.getElementById("level").value;
-    console.log(value);
+
+    onclicks = 0;
+    count = 0;
+
+    const select = document.getElementById("level");
+    if (document.getElementById("playerName").innerText == "") { alert('please enter your name before starting'); select.value = ""; return; }
+
+    level = select.value;
 
     const input = document.getElementById("answer");
     input.style.display = "block";
@@ -591,7 +621,7 @@ const selection = () => {
     const table = document.getElementById("table");
     table.style.display = "none";
 
-    if (value === "easy") {
+    if (select.value === "easy") {
         const h2 = document.getElementById("h2");
         h2.innerText = "Level Easy";
 
@@ -606,7 +636,7 @@ const selection = () => {
     }
 
 
-    else if (value === "medium") {
+    else if (select.value === "medium") {
 
         const h2 = document.getElementById("h2");
         h2.innerText = "Level Medium";
@@ -619,7 +649,7 @@ const selection = () => {
         theader.innerText = "Table Score Level Medium";
 
     }
-    else if (value === "hard") {
+    else if (select.value === "hard") {
 
         const h2 = document.getElementById("h2");
         h2.innerText = "Level Hard";
@@ -632,6 +662,39 @@ const selection = () => {
         theader.innerText = "Table Score Level Hard";
 
     }
+
+}
+
+
+//players table..............
+
+const playersTable = document.getElementById("playersTable");
+const buildPlayersTable = () => {
+    const previousBtnCheack = document.getElementById('resetBtn1');
+    if (previousBtnCheack) { playersTable.removeChild(previousBtnCheack); }
+
+    const divscontainer = document.createElement('div');
+    playersTable.appendChild(divscontainer);
+    for (let player of players) {
+        const div = document.createElement("div");
+        div.className = "ex";
+        div.innerHTML = ` <p>${player.name}</p>
+                    <p>${player.level}</p>
+                    <p>${player.points}</p>`;
+        divscontainer.appendChild(div);
+    }
+
+    const resetBtn = document.createElement('button');
+    resetBtn.innerText = "reset players";
+    resetBtn.id = "resetBtn1";
+    resetBtn.addEventListener('click', () => {
+        players = [];
+        playersTable.removeChild(divscontainer);
+        localStorage.setItem('players', JSON.stringify(players));
+    })
+    playersTable.appendChild(resetBtn);
+
+    playersTable.style.display = "block";
 
 }
 
