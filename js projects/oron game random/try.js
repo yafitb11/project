@@ -93,20 +93,22 @@ const questionFunctionEasy = () => {
     const lableWritten = document.getElementById("lable");
     lableWritten.innerText = `Question ${onclicks}. ${lableString} =`
 
-    let inputE = document.getElementById("answer");
-
-    const button = document.getElementById("submitBtn");
-    button.addEventListener('click', (e) => {
-        let givenAnswer = inputE.value;
-        givenAnswerArr.push(givenAnswer);
-        if (givenAnswer == rightAnswer) {
-            pointsArr.push("1");
-            count++;
-        } else { pointsArr.push("0"); }
-        inputE.value = "";
-    })
-
 }
+
+
+let inputE = document.getElementById("answer");
+const button = document.getElementById("submitBtn");
+const recieveAnswerChangeQuestion = () => {
+    let givenAnswer = inputE.value;
+    givenAnswerArr.push(givenAnswer);
+    if (givenAnswer == rightAnswer) {
+        pointsArr.push("1");
+        count++;
+    } else { pointsArr.push("0"); }
+    inputE.value = "";
+    questionFunctionEasy();
+}
+
 
 
 //score table........................
@@ -175,10 +177,9 @@ const selection = () => {
 
     if (select.value === "Easy") {
 
-        lable1.innerText = "1. 3+5=?";
+        questionFunctionEasy();
 
-        submit.onclick = null;
-        submit.onclick = submitEasy;
+
 
     }
 
