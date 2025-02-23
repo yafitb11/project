@@ -84,7 +84,9 @@ const questionFunctionEasy = () => {
         return;
     }
 
-    let lable = getQuestionEasy();
+    let lable;
+    if (select.value == "Easy") { lable = getQuestionEasy(); } else if (select.value == "Medium") { lable = getQuestionMedium() } else if (select.value == "Hard") { lable = getQuestionHard() }
+
     let lableString = JSON.stringify(lable);
     lableString = lableString.slice(1, lableString.length - 1);
     questionArr.push(lableString);
