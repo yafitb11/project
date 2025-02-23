@@ -38,6 +38,7 @@ let rightAnswerArr = [];
 let givenAnswerArr = [];
 let pointsArr = [];
 let rightAnswer;
+let rowsArr = [];
 
 const randomNumberEasy = () => { return Math.ceil(Math.random() * 10); }
 const randomNumberMedium = () => { return Math.ceil(Math.random() * 100); }
@@ -56,20 +57,32 @@ let randomOperatorFunction = () => {
 
 
 const getQuestionEasy = () => {
-    return `${randomNumberEasy()} ${randomOperatorFunction()} ${randomNumberEasy()}`;
+    let num1 = randomNumberEasy();
+    let num2 = randomNumberEasy();
+    let operator = randomOperatorFunction();
+    if (operator == "/" && num1 % num2 > 0) { return getQuestionEasy(); }
+    return `${num1} ${operator} ${num2}`;
 }
 
 const getQuestionMedium = () => {
-    return `${randomNumberMedium} ${randomOperatorFunction()} ${randomNumberMedium}`;
+    let num1 = randomNumberMedium();
+    let num2 = randomNumberMedium();
+    let operator = randomOperatorFunction();
+    if (operator == "/" && num1 % num2 > 0) { return getQuestionMedium(); }
+    return `${num1} ${operator} ${num2}`;
 }
 
 const getQuestionHard = () => {
-    return `${randomNumberHard} ${randomOperatorFunction()} ${randomNumberHard}`;
+    let num1 = randomNumberHard();
+    let num2 = randomNumberHard();
+    let operator = randomOperatorFunction();
+    if (operator == "/" && num1 % num2 > 0) { return getQuestionHard(); }
+    return `${num1} ${operator} ${num2}`;
 }
 
 
 
-const questionFunctionEasy = () => {
+const questionFunction = () => {
     onclicks++;
 
     if (onclicks == 11) {
@@ -108,7 +121,7 @@ const recieveAnswerChangeQuestion = () => {
         count++;
     } else { pointsArr.push("0"); }
     inputE.value = "";
-    questionFunctionEasy();
+    questionFunction();
 }
 
 
@@ -118,7 +131,6 @@ const buildMainTable = () => {
 
     const theader = document.getElementById("theader");
     theader.innerText = `Table Score Level ${select.value}`;
-    const rowsArr = [];
 
     for (let i = 0; i < 10; i++) {
         const row = document.createElement("div");
@@ -158,9 +170,13 @@ const buildMainTable = () => {
 
 //selection................................................
 const selection = () => {
-
     onclicks = 0;
     count = 0;
+    questionArr = [];
+    rightAnswerArr = [];
+    givenAnswerArr = [];
+    pointsArr = [];
+    rowsArr = [];
 
     if (document.getElementById("playerName").innerText == "") { alert('please enter your name before starting'); select.value = ""; return; }
 
@@ -175,37 +191,7 @@ const selection = () => {
     submit.style.display = "block";
     table.style.display = "none";
     playersTable.style.display = "none";
-
-
-    if (select.value === "Easy") {
-
-        questionFunctionEasy();
-
-
-
-    }
-
-
-    else if (select.value === "Medium") {
-
-        lable1.innerText = "1. 14+64=?";
-
-        submit.onclick = submitMedium;
-
-        const theader = document.getElementById("theader");
-        theader.innerText = "Table Score Level Medium";
-
-    }
-    else if (select.value === "Hard") {
-
-        lable1.innerText = "1. 351+552=?";
-
-        submit.onclick = submitHard;
-
-        const theader = document.getElementById("theader");
-        theader.innerText = "Table Score Level Hard";
-
-    }
+    questionFunction();
 
 }
 
@@ -244,11 +230,16 @@ resetGame = () => {
     count = 0;
     select.value = "";
     name1.value == "";
+    questionArr = [];
+    rightAnswerArr = [];
+    givenAnswerArr = [];
+    pointsArr = [];
+    rowsArr = [];
     document.getElementById("nameDiv").style.display = "block";
     document.getElementById("playerName").innerText = "";
     document.getElementById("changePlayerBtn").style.display = "none";
     document.getElementById("answer").style.display = "none";
-    document.getElementById("button").style.display = "none";
+    document.getElementById("submitBtn").style.display = "none";
     document.getElementById("h2").innerText = "";
     lable1.innerText = "";
     table.style.display = "none";
