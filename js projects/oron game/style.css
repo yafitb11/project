@@ -50,9 +50,6 @@
     display: none;
     width: 300px;
     border: black solid 2px;
-    margin: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
 
 }
 
@@ -122,6 +119,17 @@
     display: none;
 }
 
+#changePlayerBtn {
+    display: none;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+#resetGameBtn {
+    margin-top: 15px;
+}
+
+
 @media(max-width:768px) {
 
     #cardtable {
@@ -129,4 +137,13 @@
         gap: 10px;
     }
 
+    #table {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #container>h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
 }

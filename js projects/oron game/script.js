@@ -14,6 +14,8 @@ let userName;
 let level;
 let players = JSON.parse(localStorage.getItem('players')) || [];
 
+
+////name..............
 const name1 = document.getElementById("name");
 const addName = () => {
     document.getElementById('nameHelper').style.display = "none";
@@ -22,13 +24,16 @@ const addName = () => {
     name1.value = "";
     document.getElementById("playerName").innerText = userName;
     document.getElementById("nameDiv").style.display = "none";
+    document.getElementById("changePlayerBtn").style.display = "block";
 }
+
 
 
 let lable1 = document.getElementById("lable");
 let count = 0;
 let onclicks = 0;
-
+const table = document.getElementById("table");
+const select = document.getElementById("level");
 
 //easy................................
 const submitEasy = () => {
@@ -204,7 +209,6 @@ const submitEasy = () => {
                 p10.innerText = "1";
             }
             alert("you have reached " + count + " points");
-            const table = document.getElementById("table");
             table.style.display = "block";
             const tscore = document.getElementById("tscore");
             tscore.innerText = `your total score is  ${count} points`;
@@ -212,6 +216,7 @@ const submitEasy = () => {
             players.push(user);
             localStorage.setItem('players', JSON.stringify(players));
             buildPlayersTable();
+            select.value = "";
             break;
 
         default:
@@ -392,7 +397,6 @@ const submitMedium = () => {
                 p10.innerText = "1";
             }
             alert("you have reached " + count + " points");
-            const table = document.getElementById("table");
             table.style.display = "block";
             const tscore = document.getElementById("tscore");
             tscore.innerText = `your total score is  ${count} points`;
@@ -400,6 +404,7 @@ const submitMedium = () => {
             players.push(user);
             localStorage.setItem('players', JSON.stringify(players));
             buildPlayersTable();
+            select.value = "";
             break;
 
         default:
@@ -584,7 +589,6 @@ const submitHard = () => {
                 p10.innerText = "1";
             }
             alert("you have reached " + count + " points");
-            const table = document.getElementById("table");
             table.style.display = "block";
             const tscore = document.getElementById("tscore");
             tscore.innerText = `your total score is  ${count} points`;
@@ -592,6 +596,7 @@ const submitHard = () => {
             players.push(user);
             localStorage.setItem('players', JSON.stringify(players));
             buildPlayersTable();
+            select.value = "";
             break;
 
         default:
@@ -601,25 +606,26 @@ const submitHard = () => {
 }
 
 
-//selection.................................................
+
+const playersTable = document.getElementById("playersTable");
+
+//selection................................................
 const selection = () => {
 
     onclicks = 0;
     count = 0;
 
-    const select = document.getElementById("level");
     if (document.getElementById("playerName").innerText == "") { alert('please enter your name before starting'); select.value = ""; return; }
 
     level = select.value;
 
     const input = document.getElementById("answer");
     input.style.display = "block";
-
     const submit = document.getElementById("button");
     submit.style.display = "block";
-
-    const table = document.getElementById("table");
     table.style.display = "none";
+    playersTable.style.display = "none";
+
 
     if (select.value === "easy") {
         const h2 = document.getElementById("h2");
@@ -667,9 +673,8 @@ const selection = () => {
 
 
 //players table..............
-
-const playersTable = document.getElementById("playersTable");
 const playersDiv = document.getElementById('playersDiv');
+
 const buildPlayersTable = () => {
     playersDiv.innerHTML = "";
 
@@ -692,4 +697,24 @@ const resetPlayers = () => {
     players = [];
     localStorage.setItem('players', JSON.stringify(players));
     playersDiv.innerHTML = "";
+}
+
+
+//reset game...........
+
+resetGame = () => {
+    onclicks = 0;
+    count = 0;
+    select.value = "";
+    name1.value == "";
+    document.getElementById("nameDiv").style.display = "block";
+    document.getElementById("playerName").innerText = "";
+    document.getElementById("changePlayerBtn").style.display = "none";
+    document.getElementById("answer").style.display = "none";
+    document.getElementById("button").style.display = "none";
+    document.getElementById("h2").innerText = "";
+    lable1.innerText = "";
+    table.style.display = "none";
+    playersTable.style.display = "none";
+
 }
