@@ -6,9 +6,18 @@
 
 body {
     padding: 15px;
+    background-color: lightblue;
 
     h1 {
         margin: 20px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #98a1dc;
     }
 }
 
@@ -17,7 +26,13 @@ body {
     display: flex;
     width: 100%;
     gap: 10px;
+
+    input[type="submit"] {
+        padding: 5px;
+    }
+
 }
+
 
 .form-control {
     display: flex;
@@ -42,6 +57,10 @@ body {
 
     button {
         margin: 3px;
+    }
+
+    button:hover {
+        background-color: #98a1dc;
     }
 }
 
