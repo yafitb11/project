@@ -1,13 +1,23 @@
+body {
+    background-image: url('https://meyda.education.gov.il/files/pop/1376/364470776.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
 #container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    font-weight: bold;
 }
 
-#container h1 {
+.whiteCircle {
     text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
 }
 
 #cardtable {
@@ -15,18 +25,17 @@
     align-items: center;
     justify-content: center;
     gap: 90px;
-
 }
 
 #card {
-    border: black solid 2px;
+    border: solid 3px rgba(255, 255, 255, 0.7);
     height: 200px;
     width: 200px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 #inputholder {
@@ -50,7 +59,7 @@
     display: none;
     width: 300px;
     border: black solid 2px;
-
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .theaderr {
@@ -102,6 +111,10 @@
     flex-direction: column;
     display: none;
     width: 200px;
+}
+
+#playersDiv {
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 #buttonDiv {

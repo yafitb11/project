@@ -15,12 +15,14 @@ let players = JSON.parse(localStorage.getItem('players')) || [];
 
 ////name..............
 const name1 = document.getElementById("name");
+const userNameH1 = document.getElementById("playerName");
 const addName = () => {
     document.getElementById('nameHelper').style.display = "none";
     userName = name1.value;
     if (name1.value == "") { document.getElementById('nameHelper').style.display = "block"; name1.style.border = "red solid 2px"; return; }
     name1.value = "";
-    document.getElementById("playerName").innerText = userName;
+    userNameH1.innerText = userName;
+    userNameH1.className = "whiteCircle";
     document.getElementById("nameDiv").style.display = "none";
     document.getElementById("changePlayerBtn").style.display = "block";
 }
@@ -104,7 +106,7 @@ const questionFunction = () => {
     rightAnswer = eval(lableString);
     rightAnswerArr.push(rightAnswer);
     const lableWritten = document.getElementById("lable");
-    lableWritten.innerText = `Question ${onclicks}. ${lableString} =`;
+    lableWritten.innerText = `Question ${onclicks}.  ${lableString} =`;
 
 }
 
@@ -133,6 +135,7 @@ const buildMainTable = () => {
     for (let i = 0; i < 10; i++) {
         const row = document.createElement("div");
         row.className = "ex";
+        row.id = `playerRow${i}`;
         document.getElementById("rows").appendChild(row);
         rowsArr.push(row);
     }
@@ -165,6 +168,17 @@ const buildMainTable = () => {
     tscore.innerText = `your total score is  ${count} points`;
 }
 
+//unbuild score table.................
+
+const unbuildMainTable = () => {
+    for (let i = 0; i < 10; i++) {
+        if (document.getElementById(`playerRow${i}`)) {
+            const row = document.getElementById(`playerRow${i}`);
+            document.getElementById("rows").removeChild(row);
+        }
+    }
+}
+
 
 //selection................................................
 const selection = () => {
@@ -175,8 +189,9 @@ const selection = () => {
     givenAnswerArr = [];
     pointsArr = [];
     rowsArr = [];
+    unbuildMainTable();
 
-    if (document.getElementById("playerName").innerText == "") { alert('please enter your name before starting'); select.value = ""; return; }
+    if (document.getElementById("playerName").innerText == "") { alert('please add your name before starting'); select.value = ""; return; }
 
     level = select.value;
 
@@ -233,6 +248,7 @@ resetGame = () => {
     givenAnswerArr = [];
     pointsArr = [];
     rowsArr = [];
+    unbuildMainTable();
     document.getElementById("nameDiv").style.display = "block";
     document.getElementById("playerName").innerText = "";
     document.getElementById("changePlayerBtn").style.display = "none";
@@ -242,5 +258,5 @@ resetGame = () => {
     lable1.innerText = "";
     table.style.display = "none";
     playersTable.style.display = "none";
-
+    userNameH1.className = "";
 }
