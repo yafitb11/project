@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <div id="container">
         <h1>Welcome to Oron's Game</h1>
         <br>
@@ -28,9 +29,9 @@
 
         <select name="" id="level" onchange="selection()">
             <option value="" selected disabled>choose your level</option>
-            <option value="easy">Easy: 1-10</option>
-            <option value="medium">Medium: 1-100</option>
-            <option value="hard">Heard: 1-1000</option>
+            <option value="Easy">Easy: 1-10</option>
+            <option value="Medium">Medium: 1-100</option>
+            <option value="Hard">Heard: 1-1000</option>
         </select>
 
         <br><br>
@@ -46,8 +47,8 @@
                 </div>
                 <br>
                 <div id="inputholder">
-                    <input type="number" name="answer" id="answer" placeholder="write your answer"><button id="button"
-                        onclick="cheack()">submit</button>
+                    <input type="number" name="answer" id="answer" placeholder="write your answer"><button
+                        id="submitBtn" onclick="recieveAnswerChangeQuestion()">submit</button>
                 </div>
             </div>
 
@@ -63,71 +64,13 @@
                     <p>answer</p>
                     <p>points</p>
                 </div>
-                <div class="ex">
-                    <p id="q1"></p>
-                    <p id="ra1"></p>
-                    <p id="a1"></p>
-                    <p id="p1"></p>
-                </div>
-                <div class="ex">
-                    <p id="q2"></p>
-                    <p id="ra2"></p>
-                    <p id="a2"></p>
-                    <p id="p2"></p>
-                </div>
-                <div class="ex">
-                    <p id="q3"></p>
-                    <p id="ra3"></p>
-                    <p id="a3"></p>
-                    <p id="p3"></p>
-                </div>
-                <div class="ex">
-                    <p id="q4"></p>
-                    <p id="ra4"></p>
-                    <p id="a4"></p>
-                    <p id="p4"></p>
-                </div>
-                <div class="ex">
-                    <p id="q5"></p>
-                    <p id="ra5"></p>
-                    <p id="a5"></p>
-                    <p id="p5"></p>
-                </div>
-                <div class="ex">
-                    <p id="q6"></p>
-                    <p id="ra6"></p>
-                    <p id="a6"></p>
-                    <p id="p6"></p>
-                </div>
-                <div class="ex">
-                    <p id="q7"></p>
-                    <p id="ra7"></p>
-                    <p id="a7"></p>
-                    <p id="p7"></p>
-                </div>
-                <div class="ex">
-                    <p id="q8"></p>
-                    <p id="ra8"></p>
-                    <p id="a8"></p>
-                    <p id="p8"></p>
-                </div>
-                <div class="ex">
-                    <p id="q9"></p>
-                    <p id="ra9"></p>
-                    <p id="a9"></p>
-                    <p id="p9"></p>
-                </div>
-                <div class="ex">
-                    <p id="q10"></p>
-                    <p id="ra10"></p>
-                    <p id="a10"></p>
-                    <p id="p10"></p>
-                </div>
+                <div id="rows"></div>
                 <div id="tfooter">
                     <p id="tscore">total score</p>
                 </div>
 
             </div>
+
 
 
             <div id="playersTable">
@@ -143,14 +86,11 @@
                 <div id="buttonDiv"> <button onclick="resetPlayers()">reset players</button></div>
             </div>
 
-
         </div>
 
         <button id="resetGameBtn" onclick="resetGame()">reset game</button>
 
     </div>
-
-
 
 
 </body>
