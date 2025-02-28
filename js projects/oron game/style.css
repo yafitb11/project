@@ -145,6 +145,12 @@ body {
 
 @media(max-width:768px) {
 
+    #nameDiv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     #cardtable {
         flex-direction: column;
         gap: 10px;
