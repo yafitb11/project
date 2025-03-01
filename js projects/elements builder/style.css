@@ -160,6 +160,7 @@ form>fieldset>input[type="submit"] {
     #creationPlatform {
         width: 100%;
         padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     form>fieldset {
