@@ -60,7 +60,10 @@ $my-purple2: rgb(166, 0, 255);
     }
 }
 
-#cards {
+
+
+#cards,
+#jscards {
     background: linear-gradient(white, rgba(213, 213, 213, 0.95), gray);
 
     .card {
@@ -84,6 +87,7 @@ $my-purple2: rgb(166, 0, 255);
         }
     }
 }
+
 
 #contact {
     padding-right: 50px;
@@ -135,6 +139,10 @@ $my-purple2: rgb(166, 0, 255);
 }
 
 @media(max-width:996px) {
+
+    #container {
+        width: 100% !important;
+    }
 
     #nav {
         padding: 0px;
