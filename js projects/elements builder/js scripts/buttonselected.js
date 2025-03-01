@@ -99,7 +99,7 @@ const cerateButtonForm = () => {
     fieldset.appendChild(inputsub);
 
     const removeFormBtn = document.createElement("button");
-    removeFormBtn.innerText = "remove button form";
+    removeFormBtn.innerText = "hide button form";
     form.appendChild(removeFormBtn);
     removeFormBtn.addEventListener('click', (e) => {
         e.preventDefault();

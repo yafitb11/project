@@ -20,7 +20,7 @@
 
 #side {
     width: 25%;
-    background-color: grey;
+    background-color: lightskyblue;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -112,7 +112,7 @@ form>fieldset>input[type="submit"] {
 #side2 {
     order: 1;
     height: 400px;
-    background-color: gray;
+    background-color: lightskyblue;
 }
 
 .buttonsDiv {

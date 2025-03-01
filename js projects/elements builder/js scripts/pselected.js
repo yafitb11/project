@@ -57,7 +57,7 @@ const ceratePForm = () => {
 
 
     const removeFormBtn = document.createElement("button");
-    removeFormBtn.innerText = "remove p form";
+    removeFormBtn.innerText = "hide p form";
     form.appendChild(removeFormBtn);
     removeFormBtn.addEventListener('click', (e) => {
         e.preventDefault();
