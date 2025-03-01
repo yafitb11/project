@@ -38,6 +38,13 @@ const startGame = () => {
             tile.addEventListener("dragleave", dragLeave);
             tile.addEventListener("drop", dragDrop);
             tile.addEventListener("dragend", dragEnd);
+            //for mobile
+            tile.addEventListener("touchstart", dragStart);
+            tile.addEventListener("touchmove", dragOver);
+            tile.addEventListener("touchcancel", dragLeave);
+            tile.addEventListener("touchend", () => {
+                dragDrop(); dragEnd();
+            });
 
             document.getElementById("board").appendChild(tile);
             row.push(tile);
