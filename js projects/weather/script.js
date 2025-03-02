@@ -6,7 +6,6 @@ const q = document.getElementById("inputCity");
 const button = document.querySelector("button");
 const h1 = document.getElementById("city");
 const time = document.getElementById("time");
-//const timePic = document.getElementById("timePic")
 const temp = document.getElementById("temp");
 const description = document.getElementById("description");
 const weatherIcon = document.getElementById("weatherIcon");
@@ -42,20 +41,6 @@ function displayWeather(weatherData) {
 button.addEventListener("click", () => {
     getWeather(q.value);
 });
-
-/*
-async function getCityFoto(city) {
-    const response = await fetch(`https://api.travelpayouts.com/v2/city-photo?city=${city}`);
-    const data = await response.json();
-    console.log(data);
-    //const foto = data.url;
-    const container = document.getElementById("container");
-    container.style.backgroundImage = foto;
-
-}
-*/
-
-
 
 
 const geoApiKey = 'c44d36e04abc4cbbab5df8461478bc11';
@@ -101,8 +86,3 @@ async function getCityTime(city) {
     else { container.style.backgroundImage = "url('./pics/night.png')"; }
 }
 
-
-
-
-
-//password for API time ninjas:   7PzPG3.5aCmsy@t

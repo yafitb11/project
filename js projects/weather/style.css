@@ -67,3 +67,12 @@ p {
     width: 100%;
     margin-bottom: 0px;
 }
+
+#weatherIcon {
+    width: 120px;
+}
+
+#description,
+#temp {
+    margin: 0px;
+}
