@@ -11,6 +11,7 @@ const messageHelper = document.getElementById('messageHelper');
 const submitButton = document.getElementById('submitBtn');
 
 const checkNameValid = () => {
+    submitButton.disabled = false;
     const value = namef.value;
     console.log(value);
 
@@ -28,6 +29,7 @@ const checkNameValid = () => {
 namef.addEventListener('input', checkNameValid);
 
 const checkEmailValid = () => {
+    submitButton.disabled = false;
     const value = email.value;
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
@@ -48,6 +50,7 @@ email.addEventListener('input', checkEmailValid);
 
 
 const checkPhoneValid = () => {
+    submitButton.disabled = false;
     const value = phone.value;
     if (value[0] != 0 || value[1] != 5 || value.length != 10) {
         phoneHelper.innerText = 'please enter a valid mobile phone number';
